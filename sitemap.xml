@@ -2,16 +2,37 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://blog.jferroal.com/archive/index.html</loc>
+    <loc>http://blog.jferroal.com/2016/05/12/hello-world/</loc>
     
-    <lastmod>2016-03-29T15:12:30.085Z</lastmod>
+    <lastmod>2016-05-12T14:48:34.433Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://blog.jferroal.com/2016/04/21/hello-world/</loc>
+    <loc>http://blog.jferroal.com/about/index.html</loc>
     
-    <lastmod>2016-03-29T14:54:15.398Z</lastmod>
+    <lastmod>2016-05-12T13:40:57.291Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.jferroal.com/tags/index.html</loc>
+    
+    <lastmod>2016-05-12T13:28:55.049Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.jferroal.com/categories/index.html</loc>
+    
+    <lastmod>2016-05-12T13:22:04.898Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.jferroal.com/archive/index.html</loc>
+    
+    <lastmod>2016-03-29T15:12:30.085Z</lastmod>
     
   </url>
   
