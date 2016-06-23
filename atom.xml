@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jferroal.com/"/>
-  <updated>2016-06-22T10:51:06.315Z</updated>
+  <updated>2016-06-23T11:19:00.920Z</updated>
   <id>http://blog.jferroal.com/</id>
   
   <author>
@@ -14,6 +14,36 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2016-06-23 Morning</title>
+    <link href="http://blog.jferroal.com/2016/06/23/2016-6-23-Morning/"/>
+    <id>http://blog.jferroal.com/2016/06/23/2016-6-23-Morning/</id>
+    <published>2016-06-23T10:57:02.000Z</published>
+    <updated>2016-06-23T11:19:00.920Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-623-Morning.jpg&quot; alt=&quot;ground&quot;&gt;&lt;/p&gt;
+&lt;p&gt;之前不喜欢写日记就是觉得每天扯一堆无关痛痒的话真的没什么意思额&lt;/p&gt;
+&lt;p&gt;果然像 git page 这种静态博客还是适合技术类文章多一点，写日常生活的东西又没办法设置权限，什么都给别人看了，感觉好不爽  &lt;/p&gt;
+&lt;p&gt;昨天果然 flag 了，各种坑爹 bug 啊，我就觉得交流问题真的是越来越严重了，没有一个规范让大家都不好过，这有这的想法，那有那的考虑，到最后兼顾前后左右就特么的把东西做成了一个五彩团子，丑死了&lt;/p&gt;
+&lt;p&gt;指挥的人给一个具体的大方向，合作的人在交流和确定了基准之后才进行正式的工作(稍微有点经验很多东西用脑子想都不会存在特别大的分歧吧)，少一点坑爹好嘛&lt;/p&gt;
+&lt;p&gt;母亲和父亲大人在重新事业起步的时候好像也很蛋疼啊，这回在我爸主场上就轮到我们吐槽了，想想也是，毕竟在那边也没什么能聊天的人&lt;/p&gt;
+&lt;p&gt;今天试着重构一下之前的部分代码吧，写的是什么玩意 … … &lt;/p&gt;
+&lt;p&gt;这两天老是回来太晚，睡觉都不能正常睡了，蛋疼&lt;/p&gt;
+&lt;p&gt;就酱紫，加油 ! ! ! &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-623-Morning.jpg&quot; alt=&quot;ground&quot;&gt;&lt;/p&gt;
+&lt;p&gt;之前不喜欢写日记就是觉得每天扯一堆无关痛痒的话真的没什么意思额&lt;/p
+    
+    </summary>
+    
+    
+      <category term="daily" scheme="http://blog.jferroal.com/tags/daily/"/>
+    
+  </entry>
   
   <entry>
     <title>2016-06-22 Morning</title>
