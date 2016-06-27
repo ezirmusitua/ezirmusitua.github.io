@@ -24,7 +24,7 @@
 <meta property="og:description" content="今天阳光明媚，万里无云呐，早上一直在弄 gvim 和 graphviz，弄到下午才弄完，本来想着做个饭就不出门了，但是因为要去最近的 citi bank ATM 机上 取钱，还是灰溜溜的爬出去了，一路上风景好赞呐，心花怒放的 ~好多黑叔叔，吓死我了，还有尼玛说好的 citi bank 取款不要手续费呢，坑爹呢这是 !晚上回来用 graphviz 画了画图，过了过之前照着 copy 的then/pr">
 <meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-626-Wander.jpg">
 <meta property="og:image" content="http://image.slidesharecdn.com/promisesandchaininginangularjs-141027044455-conversion-gate02/95/promises-and-chaining-in-angularjs-into-callback-hell-and-back-again-17-638.jpg?cb=1414385382">
-<meta property="og:updated_time" content="2016-06-27T02:33:54.792Z">
+<meta property="og:updated_time" content="2016-06-27T02:39:26.982Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="谈谈 Promise - 1 | Jferroal's Blog">
 <meta name="twitter:description" content="今天阳光明媚，万里无云呐，早上一直在弄 gvim 和 graphviz，弄到下午才弄完，本来想着做个饭就不出门了，但是因为要去最近的 citi bank ATM 机上 取钱，还是灰溜溜的爬出去了，一路上风景好赞呐，心花怒放的 ~好多黑叔叔，吓死我了，还有尼玛说好的 citi bank 取款不要手续费呢，坑爹呢这是 !晚上回来用 graphviz 画了画图，过了过之前照着 copy 的then/pr">
@@ -228,22 +228,31 @@ classes that you can use:
 <p>你打电话问书店老板有没有《分布式系统》这本书，如果是同步通信机制，书店老板会说，你稍等，”我查一下”，然后开始查啊查，等查好了（可能是5秒，也可能是一天）告诉你结果（返回结果）。<br>而异步通信机制，书店老板直接告诉你我查一下啊，查好了打电话给你，然后直接挂电话了（不返回结果）。然后查好了，他会主动打电话给你。在这里老板通过“回电”这种方式来回调  </p>
 </blockquote>
 <p>要记住，老板不是只服务你一个人，在帮你找书的同时也会进行其他的行为。  </p>
-<h3 id="什么是-Promise"><a href="#什么是-Promise" class="headerlink" title="什么是 Promise"></a>什么是 Promise</h3><p>传统的 Javascript 的异步编程方法是回调 (callback)，意即在过程完成后调用 callback 函数处理返回结果，使用传统的 callback 方法，有可能会导致可怕的回调地狱(其实三角形看起来挺好看的吖:P)<br><img src="http://image.slidesharecdn.com/promisesandchaininginangularjs-141027044455-conversion-gate02/95/promises-and-chaining-in-angularjs-into-callback-hell-and-back-again-17-638.jpg?cb=1414385382" alt="callback-hell"><br>而使用 Promise 能够让我们用一种并行的方式编写异步代码<br>关于 <a href="https://en.wikipedia.org/wiki/Promise_(disambiguation" target="_blank" rel="external">Promise</a>) 的相关内容就不再赘述，接下来简单的讲一讲相关的概念:  </p>
+<h3 id="什么是-Promise"><a href="#什么是-Promise" class="headerlink" title="什么是 Promise"></a>什么是 Promise</h3><p>传统的 Javascript 的异步编程方法是回调 (callback)，意即在过程完成后调用 callback 函数处理返回结果，使用传统的 callback 方法，有可能会导致可怕的回调地狱(其实三角形看起来挺好看的吖:P)<br><img src="http://image.slidesharecdn.com/promisesandchaininginangularjs-141027044455-conversion-gate02/95/promises-and-chaining-in-angularjs-into-callback-hell-and-back-again-17-638.jpg?cb=1414385382" alt="callback-hell"><br>而使用 Promise 能够让我们用一种并行的方式编写异步代码<br>关于 <a href="https://en.wikipedia.org/wiki/Promise_(disambiguation" target="_blank" rel="external">Promise</a>) 的相关内容就不再赘述，接下来简单地讲一讲相关的概念:  </p>
 <ul>
 <li>Promise<br>用于表示还<strong>未知</strong>的值  </li>
-<li>Deferred<br>用于表示还<strong>未完成</strong>的工作<br>当你理解了 Promise 之后你会觉得上面这两个概念其实就已经能够概括 Promise 了<br>具体一点:  <blockquote>
+<li>Deferred<br>用于表示还<strong>未完成</strong>的工作  </li>
+</ul>
+<p>当你理解了 Promise 之后你会觉得上面这两个概念其实就已经能够概括 Promise 了，具体一点:  </p>
+<blockquote>
 <ol>
-<li>Promise 是一个初始未知值的占位符</li>
-<li>Deferred 是产生未知值的计算过程</li>
-<li>Deferred 有一个 Promise 对象用来代表未来的结果</li>
-<li>调用者可以 resolve/reject Deferred</li>
-<li>Promise 本身可以被分配给多个消费者，并且每个消费者都会独立观察 Promise 的结果</li>
-<li>resolver 和 deferred 可以被分配给任意数量的生产者，并且 Promise 能够被第一个 resolve 处理<br>用连续的语言形容一下，大概是这样子的：<br>我们有一个异步的过程 A，如果使用 Promise 的方式来处理这个异步过程，那么 A 会产生一个 Deferred - B，同时 B 中包含这一个 Promise - C，这个 C 代表的是 A 可能产生的结果，如果我们将 B 分配给另一个需要 A 产生数据的过程 D，那么当 B 的结果返回时，D 的就能够 C。</li>
+<li>Promise 是一个初始未知值的占位符  </li>
+<li>Deferred 是产生未知值的计算过程  </li>
+<li>Deferred 有一个 Promise 对象用来代表未来的结果  </li>
+<li>调用者可以 resolve/reject Deferred  </li>
+<li>Promise 本身可以被分配给多个消费者，并且每个消费者都会独立观察 Promise 的结果  </li>
+<li>resolver 和 deferred 可以被分配给任意数量的生产者，并且 Promise 能够被第一个 resolve 处理  </li>
 </ol>
 </blockquote>
-</li>
-</ul>
-<p>再用一个生活中的例子来解释，我们在使用淘宝的过程中，当我们想要使用</p>
+<p>用连续的语言形容一下，大概是这样子的：<br>我们有一个异步的过程 A，如果使用 Promise 的方式来处理这个异步过程，那么 A 会产生一个 Deferred - B，同时 B 中包含着一个 Promise - C，这个 C 代表的是 A 可能产生的结果，如果我们将 B 分配给另一个需要 A 产生数据的过程 D，那么当 B 的结果返回时，D 的就能够处理 C 的结果。</p>
+<hr>
+<p>TO BE CONTINUE  </p>
+<hr>
+<ol>
+<li>淘宝购物的例子  </li>
+<li>Promise/A 标准  </li>
+<li>then/promise 的实现  </li>
+</ol>
 
   </section>
 
