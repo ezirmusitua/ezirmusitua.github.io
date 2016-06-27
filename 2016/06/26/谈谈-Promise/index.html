@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      谈谈 Promise - 1 | Jferroal&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Jferroal">
+    
+    
+
+    <meta name="description" content="今天阳光明媚，万里无云呐，早上一直在弄 gvim 和 graphviz，弄到下午才弄完，本来想着做个饭就不出门了，但是因为要去最近的 citi bank ATM 机上 取钱，还是灰溜溜的爬出去了，一路上风景好赞呐，心花怒放的 ~好多黑叔叔，吓死我了，还有尼玛说好的 citi bank 取款不要手续费呢，坑爹呢这是 !晚上回来用 graphviz 画了画图，过了过之前照着 copy 的then/pr">
+<meta property="og:type" content="article">
+<meta property="og:title" content="谈谈 Promise - 1 | Jferroal's Blog">
+<meta property="og:url" content="http://blog.jferroal.com/2016/06/26/谈谈-Promise/index.html">
+<meta property="og:site_name" content="Jferroal's Blog">
+<meta property="og:description" content="今天阳光明媚，万里无云呐，早上一直在弄 gvim 和 graphviz，弄到下午才弄完，本来想着做个饭就不出门了，但是因为要去最近的 citi bank ATM 机上 取钱，还是灰溜溜的爬出去了，一路上风景好赞呐，心花怒放的 ~好多黑叔叔，吓死我了，还有尼玛说好的 citi bank 取款不要手续费呢，坑爹呢这是 !晚上回来用 graphviz 画了画图，过了过之前照着 copy 的then/pr">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-626-Wander.jpg">
+<meta property="og:image" content="http://image.slidesharecdn.com/promisesandchaininginangularjs-141027044455-conversion-gate02/95/promises-and-chaining-in-angularjs-into-callback-hell-and-back-again-17-638.jpg?cb=1414385382">
+<meta property="og:updated_time" content="2016-06-27T02:33:54.792Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="谈谈 Promise - 1 | Jferroal's Blog">
+<meta name="twitter:description" content="今天阳光明媚，万里无云呐，早上一直在弄 gvim 和 graphviz，弄到下午才弄完，本来想着做个饭就不出门了，但是因为要去最近的 citi bank ATM 机上 取钱，还是灰溜溜的爬出去了，一路上风景好赞呐，心花怒放的 ~好多黑叔叔，吓死我了，还有尼玛说好的 citi bank 取款不要手续费呢，坑爹呢这是 !晚上回来用 graphviz 画了画图，过了过之前照着 copy 的then/pr">
+<meta name="twitter:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-626-Wander.jpg">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Jferroal&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          记录人生中不同的体验
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/someus" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">谈谈 Promise - 1</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-06-26" class="post-meta__date date">2016-06-26</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/Javascript-Promise/">Javascript, Promise</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>今天阳光明媚，万里无云呐，早上一直在弄 gvim 和 graphviz，弄到下午才弄完，本来想着做个饭就不出门了，但是因为要去最近的 citi bank ATM 机上 取钱，还是灰溜溜的爬出去了，一路上风景好赞呐，心花怒放的 ~<br>好多黑叔叔，吓死我了，还有尼玛说好的 citi bank 取款不要手续费呢，坑爹呢这是 !<br><img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-626-Wander.jpg" alt="beautiful buildings"><br>晚上回来用 graphviz 画了画图，过了过之前照着 copy 的<a href="https://github.com/then/promise/blob/master/src/core.js" target="_blank" rel="external">then/promise</a> 的 source code，翻译了部分 <a href="http://blog.mediumequalsmessage.com/promise-deferred-objects-in-javascript-pt1-theory-and-semantics" target="_blank" rel="external">Promise &amp; Deferred</a>，大致上也算是理解了 Promise 的含义<br>So，boys and girls，it’s time to 扯淡 ~  </p>
+<h2 id="一些概念"><a href="#一些概念" class="headerlink" title="一些概念"></a>一些概念</h2><h3 id="为什么要用-Promise"><a href="#为什么要用-Promise" class="headerlink" title="为什么要用 Promise?"></a>为什么要用 Promise?</h3><p>首先必须要知道的是 Javascript 是单线程的，并且在 Javascript 中存在很多异步的过程。<br>举个例子，人们在医院里体检，分别要在各个不同的科室中进行检查，每一间科室不会等待某一位患者完成之前的检查并拒绝所有其他的用户，正确的行为是只要有能够检查的，就先让能检查的进行检查。<br>好绕口，感觉上面的例子不怎么好呢 … …<br>在<a href="https://www.zhihu.com/question/19732473" target="_blank" rel="external">知乎</a>上找了个还可以的解释，不知道能不能看懂:  </p>
+<blockquote>
+<p>你打电话问书店老板有没有《分布式系统》这本书，如果是同步通信机制，书店老板会说，你稍等，”我查一下”，然后开始查啊查，等查好了（可能是5秒，也可能是一天）告诉你结果（返回结果）。<br>而异步通信机制，书店老板直接告诉你我查一下啊，查好了打电话给你，然后直接挂电话了（不返回结果）。然后查好了，他会主动打电话给你。在这里老板通过“回电”这种方式来回调  </p>
+</blockquote>
+<p>要记住，老板不是只服务你一个人，在帮你找书的同时也会进行其他的行为。  </p>
+<h3 id="什么是-Promise"><a href="#什么是-Promise" class="headerlink" title="什么是 Promise"></a>什么是 Promise</h3><p>传统的 Javascript 的异步编程方法是回调 (callback)，意即在过程完成后调用 callback 函数处理返回结果，使用传统的 callback 方法，有可能会导致可怕的回调地狱(其实三角形看起来挺好看的吖:P)<br><img src="http://image.slidesharecdn.com/promisesandchaininginangularjs-141027044455-conversion-gate02/95/promises-and-chaining-in-angularjs-into-callback-hell-and-back-again-17-638.jpg?cb=1414385382" alt="callback-hell"><br>而使用 Promise 能够让我们用一种并行的方式编写异步代码<br>关于 <a href="https://en.wikipedia.org/wiki/Promise_(disambiguation" target="_blank" rel="external">Promise</a>) 的相关内容就不再赘述，接下来简单的讲一讲相关的概念:  </p>
+<ul>
+<li>Promise<br>用于表示还<strong>未知</strong>的值  </li>
+<li>Deferred<br>用于表示还<strong>未完成</strong>的工作<br>当你理解了 Promise 之后你会觉得上面这两个概念其实就已经能够概括 Promise 了<br>具体一点:  <blockquote>
+<ol>
+<li>Promise 是一个初始未知值的占位符</li>
+<li>Deferred 是产生未知值的计算过程</li>
+<li>Deferred 有一个 Promise 对象用来代表未来的结果</li>
+<li>调用者可以 resolve/reject Deferred</li>
+<li>Promise 本身可以被分配给多个消费者，并且每个消费者都会独立观察 Promise 的结果</li>
+<li>resolver 和 deferred 可以被分配给任意数量的生产者，并且 Promise 能够被第一个 resolve 处理<br>用连续的语言形容一下，大概是这样子的：<br>我们有一个异步的过程 A，如果使用 Promise 的方式来处理这个异步过程，那么 A 会产生一个 Deferred - B，同时 B 中包含这一个 Promise - C，这个 C 代表的是 A 可能产生的结果，如果我们将 B 分配给另一个需要 A 产生数据的过程 D，那么当 B 的结果返回时，D 的就能够 C。</li>
+</ol>
+</blockquote>
+</li>
+</ul>
+<p>再用一个生活中的例子来解释，我们在使用淘宝的过程中，当我们想要使用</p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'jferroalsblog'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2016. | Jferroal's Blog <br/> <br/> Powered by <a href="https://hexo.io/">Hexo</a>强力驱动 | 主题 <a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+    <script src="http://o72dm2udp.bkt.clouddn.com/main.js"></script>
+    <script src="http://o72dm2udp.bkt.clouddn.com/scale.fix.js"></script>
+    
+
+    
+
+    <script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="http://o72dm2udp.bkt.clouddn.com/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
