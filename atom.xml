@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jferroal.com/"/>
-  <updated>2016-06-27T02:39:26.982Z</updated>
+  <updated>2016-06-27T11:13:37.367Z</updated>
   <id>http://blog.jferroal.com/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2016-6-27 Morning</title>
+    <link href="http://blog.jferroal.com/2016/06/27/2016-6-27-Morning/"/>
+    <id>http://blog.jferroal.com/2016/06/27/2016-6-27-Morning/</id>
+    <published>2016-06-27T11:02:47.000Z</published>
+    <updated>2016-06-27T11:13:37.367Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-627-Morning.jpg&quot; alt=&quot;duck duck&quot;&gt;&lt;br&gt;度过了一个一般般的周末吧，找了那么多的接口最后发现还是因为自己懒得出门 … …&lt;br&gt;幸亏最终还是动弹了一下，让我发现了反方向上也有很多靓丽的风景啊，往公司的那条路上是一种静谧的感觉(也可以理解为荒凉)，反方向穿过几条小道就好像真的进入一个新世界一样，很 modern ~&lt;br&gt;过去了一周，感觉事情都定下来了，没什么顾虑是最棒的了 ~&lt;br&gt;起床的时候玩手机是很坑爹的一件事，简直浪费时间，五点半起来玩了玩手机一个点就过去了&lt;br&gt;大概六点到的操场，人还不是很多，但是有很多鸭子，好像是喂食的人来了，鸭子们就倾巢而出了，在这个地方，animals 好像都不害怕人 … …&lt;br&gt;又是一个周一，好好工作，好好学习吧，加油 ~  &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-627-Morning.jpg&quot; alt=&quot;duck duck&quot;&gt;&lt;br&gt;度过了一个一般般的周末吧，找了那么多的接口最后发现还是因为自己懒得出门
+    
+    </summary>
+    
+    
+      <category term="daily" scheme="http://blog.jferroal.com/tags/daily/"/>
+    
+  </entry>
   
   <entry>
     <title>谈谈 Promise - 1</title>
