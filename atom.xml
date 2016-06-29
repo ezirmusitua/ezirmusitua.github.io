@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jferroal.com/"/>
-  <updated>2016-06-27T11:15:24.008Z</updated>
+  <updated>2016-06-28T11:34:56.661Z</updated>
   <id>http://blog.jferroal.com/</id>
   
   <author>
@@ -14,6 +14,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2016-6-28 Morning</title>
+    <link href="http://blog.jferroal.com/2016/06/28/2016-6-28-Morning/"/>
+    <id>http://blog.jferroal.com/2016/06/28/2016-6-28-Morning/</id>
+    <published>2016-06-28T10:37:17.000Z</published>
+    <updated>2016-06-28T11:34:56.661Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-628-Morning.jpg&quot; alt=&quot;rainning day&quot;&gt;&lt;br&gt;Boston 的天气真是说变就变，刚才出去还是大晴天，收拾一会再看就已经是下过雨了 … …&lt;br&gt;早上没去跑步，主要原因就是懒!昨天可能太累了，早上闹钟没把我叫醒，睡到六点半才起来，真实尴尬。&lt;br&gt;正好昨天看的胸肌锻炼，果断就用那个代替跑不了，港真，那个教程真的是家庭版嘛，真的是初级嘛，我觉得我身体素质很好的嘞，尼玛我都不能完整地做一套下来 … …&lt;br&gt;昨天比较蛋疼，快走的时候测出来一堆 bug，害我改到 8 点多，累屎老子了，有一个 bug 是因为接口没对上的原因，那个 bug 其实不难，找了半天才找到的原因就是没有找到正确的数据流向，其实找的过程应该是:   &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;查看 db 中有没有 – 是不是显示问题  &lt;/li&gt;
+&lt;li&gt;查看 network 发送的请求中有没有 – 是不是前端传入的问题  &lt;/li&gt;
+&lt;li&gt;查看传入参数的来源 – 回溯  &lt;/li&gt;
+&lt;li&gt;从来源的最开始找问题 – 二分查找  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;PS. 不知道如何使用 mdChip 也是为什么我没有找到正确的数据流的原因之一&lt;br&gt;做 FreeCodeCamp 卡住了，难道真的要做一辈子前端渣，我不服，感觉目前很大的原因在于我 layout 知识的不足，打算先补一补 layout 部分的知识再说&lt;br&gt;想试着做生煎，最近准备准备材料 ~  &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-628-Morning.jpg&quot; alt=&quot;rainning day&quot;&gt;&lt;br&gt;Boston 的天气真是说变就变，刚才出去还是大晴天，收拾一会再
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>2016-6-27 Morning</title>
@@ -41,7 +67,7 @@
     <link href="http://blog.jferroal.com/2016/06/26/%E8%B0%88%E8%B0%88-Promise/"/>
     <id>http://blog.jferroal.com/2016/06/26/谈谈-Promise/</id>
     <published>2016-06-27T01:35:46.000Z</published>
-    <updated>2016-06-27T02:39:26.982Z</updated>
+    <updated>2016-06-27T11:15:50.511Z</updated>
     
     <content type="html">&lt;p&gt;今天阳光明媚，万里无云呐，早上一直在弄 gvim 和 graphviz，弄到下午才弄完，本来想着做个饭就不出门了，但是因为要去最近的 citi bank ATM 机上 取钱，还是灰溜溜的爬出去了，一路上风景好赞呐，心花怒放的 ~&lt;br&gt;好多黑叔叔，吓死我了，还有尼玛说好的 citi bank 取款不要手续费呢，坑爹呢这是 !&lt;br&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-626-Wander.jpg&quot; alt=&quot;beautiful buildings&quot;&gt;&lt;br&gt;晚上回来用 graphviz 画了画图，过了过之前照着 copy 的&lt;a href=&quot;https://github.com/then/promise/blob/master/src/core.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;then/promise&lt;/a&gt; 的 source code，翻译了部分 &lt;a href=&quot;http://blog.mediumequalsmessage.com/promise-deferred-objects-in-javascript-pt1-theory-and-semantics&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Promise &amp;amp; Deferred&lt;/a&gt;，大致上也算是理解了 Promise 的含义&lt;br&gt;So，boys and girls，it’s time to 扯淡 ~  &lt;/p&gt;
 &lt;h2 id=&quot;一些概念&quot;&gt;&lt;a href=&quot;#一些概念&quot; class=&quot;headerlink&quot; title=&quot;一些概念&quot;&gt;&lt;/a&gt;一些概念&lt;/h2&gt;&lt;h3 id=&quot;为什么要用-Promise&quot;&gt;&lt;a href=&quot;#为什么要用-Promise&quot; class=&quot;headerlink&quot; title=&quot;为什么要用 Promise?&quot;&gt;&lt;/a&gt;为什么要用 Promise?&lt;/h3&gt;&lt;p&gt;首先必须要知道的是 Javascript 是单线程的，并且在 Javascript 中存在很多异步的过程。&lt;br&gt;举个例子，人们在医院里体检，分别要在各个不同的科室中进行检查，每一间科室不会等待某一位患者完成之前的检查并拒绝所有其他的用户，正确的行为是只要有能够检查的，就先让能检查的进行检查。&lt;br&gt;好绕口，感觉上面的例子不怎么好呢 … …&lt;br&gt;在&lt;a href=&quot;https://www.zhihu.com/question/19732473&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;知乎&lt;/a&gt;上找了个还可以的解释，不知道能不能看懂:  &lt;/p&gt;
