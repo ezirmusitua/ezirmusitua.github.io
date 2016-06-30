@@ -22,12 +22,12 @@
 <meta property="og:url" content="http://blog.jferroal.com/2016/06/29/2016-6-29-Morning/index.html">
 <meta property="og:site_name" content="Jferroal's Blog">
 <meta property="og:description" content="今天总算起的稍微早了那么一点(虽然还是比原定的时间晚了 1h 吧)这两天 Boston 的天气不怎么好额，各种阴天下雨昨天去吃了吃美帝的麦当劳，发现跟国内的完全不一样，没看到那么多的套餐，很多都是要单点的，吃了个巨无霸和龙虾卷，感觉还可以，饮料任意，真心喜欢那个蓝莓味的突然发现这两天自己都快变成 debug machine 了，各种找 bug。bug 的表现是某些 feed 无法分享给好友，生成了">
-<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-626-Morning.jpg">
-<meta property="og:updated_time" content="2016-06-29T10:44:26.032Z">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-629-Morning.jpg">
+<meta property="og:updated_time" content="2016-06-30T10:34:53.554Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="2016-6-29 Morning | Jferroal's Blog">
 <meta name="twitter:description" content="今天总算起的稍微早了那么一点(虽然还是比原定的时间晚了 1h 吧)这两天 Boston 的天气不怎么好额，各种阴天下雨昨天去吃了吃美帝的麦当劳，发现跟国内的完全不一样，没看到那么多的套餐，很多都是要单点的，吃了个巨无霸和龙虾卷，感觉还可以，饮料任意，真心喜欢那个蓝莓味的突然发现这两天自己都快变成 debug machine 了，各种找 bug。bug 的表现是某些 feed 无法分享给好友，生成了">
-<meta name="twitter:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-626-Morning.jpg">
+<meta name="twitter:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-629-Morning.jpg">
     
     
     
@@ -221,7 +221,7 @@ classes that you can use:
   </header>
 
   <section id="post-content" class="article-content post">
-    <p><img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-626-Morning.jpg" alt="playground"><br>今天总算起的稍微早了那么一点(虽然还是比原定的时间晚了 1h 吧)<br>这两天 Boston 的天气不怎么好额，各种阴天下雨<br>昨天去吃了吃美帝的麦当劳，发现跟国内的完全不一样，没看到那么多的套餐，很多都是要单点的，吃了个巨无霸和龙虾卷，感觉还可以，饮料任意，真心喜欢那个蓝莓味的<br>突然发现这两天自己都快变成 debug machine 了，各种找 bug。<br>bug 的表现是某些 feed 无法分享给好友，生成了 Message 但是在利用 LC 推送的时候出现问题，F12 后发现 REUSE 错误，断定是 LC 的问题。<br>从 Controller 里面开始找，逐步定位到 LC 的 room.send 方法，发现消息发送到一半就出现问题，并没有返回，此时觉得应该是传给 send 方法的 data 参数有问题，果然替换参数后可以执行，确定原因，然后观察 data，怀疑是 data 过大导致无法被 LC 使用，打印大小，验证了猜想。<br>终于半自主的撸了两个小界面，海森 ~<br>好好加油，have a nice day ~  </p>
+    <p><img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-629-Morning.jpg" alt="playground"><br>今天总算起的稍微早了那么一点(虽然还是比原定的时间晚了 1h 吧)<br>这两天 Boston 的天气不怎么好额，各种阴天下雨<br>昨天去吃了吃美帝的麦当劳，发现跟国内的完全不一样，没看到那么多的套餐，很多都是要单点的，吃了个巨无霸和龙虾卷，感觉还可以，饮料任意，真心喜欢那个蓝莓味的<br>突然发现这两天自己都快变成 debug machine 了，各种找 bug。<br>bug 的表现是某些 feed 无法分享给好友，生成了 Message 但是在利用 LC 推送的时候出现问题，F12 后发现 REUSE 错误，断定是 LC 的问题。<br>从 Controller 里面开始找，逐步定位到 LC 的 room.send 方法，发现消息发送到一半就出现问题，并没有返回，此时觉得应该是传给 send 方法的 data 参数有问题，果然替换参数后可以执行，确定原因，然后观察 data，怀疑是 data 过大导致无法被 LC 使用，打印大小，验证了猜想。<br>终于半自主的撸了两个小界面，海森 ~<br>好好加油，have a nice day ~  </p>
 
   </section>
 

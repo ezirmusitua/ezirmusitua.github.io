@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jferroal.com/"/>
-  <updated>2016-06-29T10:44:26.032Z</updated>
+  <updated>2016-06-30T10:54:25.171Z</updated>
   <id>http://blog.jferroal.com/</id>
   
   <author>
@@ -16,18 +16,39 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>2016-6-29 Morning</title>
-    <link href="http://blog.jferroal.com/2016/06/29/2016-6-29-Morning/"/>
-    <id>http://blog.jferroal.com/2016/06/29/2016-6-29-Morning/</id>
-    <published>2016-06-29T10:30:27.000Z</published>
-    <updated>2016-06-29T10:44:26.032Z</updated>
+    <title>2016-6-30 Morning</title>
+    <link href="http://blog.jferroal.com/2016/06/30/2016-6-30-Morning/"/>
+    <id>http://blog.jferroal.com/2016/06/30/2016-6-30-Morning/</id>
+    <published>2016-06-30T10:35:22.000Z</published>
+    <updated>2016-06-30T10:54:25.171Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-626-Morning.jpg&quot; alt=&quot;playground&quot;&gt;&lt;br&gt;今天总算起的稍微早了那么一点(虽然还是比原定的时间晚了 1h 吧)&lt;br&gt;这两天 Boston 的天气不怎么好额，各种阴天下雨&lt;br&gt;昨天去吃了吃美帝的麦当劳，发现跟国内的完全不一样，没看到那么多的套餐，很多都是要单点的，吃了个巨无霸和龙虾卷，感觉还可以，饮料任意，真心喜欢那个蓝莓味的&lt;br&gt;突然发现这两天自己都快变成 debug machine 了，各种找 bug。&lt;br&gt;bug 的表现是某些 feed 无法分享给好友，生成了 Message 但是在利用 LC 推送的时候出现问题，F12 后发现 REUSE 错误，断定是 LC 的问题。&lt;br&gt;从 Controller 里面开始找，逐步定位到 LC 的 room.send 方法，发现消息发送到一半就出现问题，并没有返回，此时觉得应该是传给 send 方法的 data 参数有问题，果然替换参数后可以执行，确定原因，然后观察 data，怀疑是 data 过大导致无法被 LC 使用，打印大小，验证了猜想。&lt;br&gt;终于半自主的撸了两个小界面，海森 ~&lt;br&gt;好好加油，have a nice day ~  &lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-629-Morning.jpg&quot; alt=&quot;sunshine&quot;&gt;&lt;br&gt;月底了，此时此刻，在中国的那一边，他们正在聚餐吧，差不多了，大学生涯就要这么结束了，莫名其妙的有一点感伤，是因为又有一段时光要被埋葬了嘛? 是因为要一个人奔跑了嘛? 是因为要开始面对那些你不喜欢的事情了嘛?&lt;br&gt;真是的，时间从来都不等我，命运也总要推着我走，如果我说是因为我是天秤座才会如此妥协，你会不会觉得这是一个很 low 的借口&lt;br&gt;如果在之前，说出这么矫情的话之前，我一定会灌上一瓶啤酒，but，在这个身不由己呐 ~&lt;br&gt;从不知道为什么自己讨厌争吵，害怕错过，恐惧离别&lt;br&gt;命名都已经习惯了，却还总是要拿那些不存在的仪式感束缚自己，所有那些我无法接受的，都是都是其他人的没有，让自己不难过的办法，就是想办法让自己变得更好&lt;br&gt;大早上起来就扯了这么多蛋，想想真是尴尬&lt;br&gt;昨天开完 IPM，应该没什么大事了，下周的任务也不重，今天试着实现一个 Stripe 的 Demo 吧 ~&lt;br&gt;加油 ~&lt;br&gt;PS. 你看你看，我又觉得我胸肌变大了 ~  &lt;/p&gt;
 </content>
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-626-Morning.jpg&quot; alt=&quot;playground&quot;&gt;&lt;br&gt;今天总算起的稍微早了那么一点(虽然还是比原定的时间晚了 1h 吧)&lt;
+      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-629-Morning.jpg&quot; alt=&quot;sunshine&quot;&gt;&lt;br&gt;月底了，此时此刻，在中国的那一边，他们正在聚餐吧，差不多了，大学生涯就要
+    
+    </summary>
+    
+    
+      <category term="daily" scheme="http://blog.jferroal.com/tags/daily/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2016-6-29 Morning</title>
+    <link href="http://blog.jferroal.com/2016/06/29/2016-6-29-Morning/"/>
+    <id>http://blog.jferroal.com/2016/06/29/2016-6-29-Morning/</id>
+    <published>2016-06-29T10:30:27.000Z</published>
+    <updated>2016-06-30T10:34:53.554Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-629-Morning.jpg&quot; alt=&quot;playground&quot;&gt;&lt;br&gt;今天总算起的稍微早了那么一点(虽然还是比原定的时间晚了 1h 吧)&lt;br&gt;这两天 Boston 的天气不怎么好额，各种阴天下雨&lt;br&gt;昨天去吃了吃美帝的麦当劳，发现跟国内的完全不一样，没看到那么多的套餐，很多都是要单点的，吃了个巨无霸和龙虾卷，感觉还可以，饮料任意，真心喜欢那个蓝莓味的&lt;br&gt;突然发现这两天自己都快变成 debug machine 了，各种找 bug。&lt;br&gt;bug 的表现是某些 feed 无法分享给好友，生成了 Message 但是在利用 LC 推送的时候出现问题，F12 后发现 REUSE 错误，断定是 LC 的问题。&lt;br&gt;从 Controller 里面开始找，逐步定位到 LC 的 room.send 方法，发现消息发送到一半就出现问题，并没有返回，此时觉得应该是传给 send 方法的 data 参数有问题，果然替换参数后可以执行，确定原因，然后观察 data，怀疑是 data 过大导致无法被 LC 使用，打印大小，验证了猜想。&lt;br&gt;终于半自主的撸了两个小界面，海森 ~&lt;br&gt;好好加油，have a nice day ~  &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-629-Morning.jpg&quot; alt=&quot;playground&quot;&gt;&lt;br&gt;今天总算起的稍微早了那么一点(虽然还是比原定的时间晚了 1h 吧)&lt;
     
     </summary>
     
@@ -277,35 +298,6 @@
     
       &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-621-Morning.jpg&quot; alt=&quot;ducks &amp;amp; building&quot;&gt;&lt;/p&gt;
 &lt;p&gt;昨天见了见美国的同事，也算是正式上班了，
-    
-    </summary>
-    
-    
-      <category term="daily" scheme="http://blog.jferroal.com/tags/daily/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2016-6-20 Morning</title>
-    <link href="http://blog.jferroal.com/2016/06/20/2016-6-20-Morning/"/>
-    <id>http://blog.jferroal.com/2016/06/20/2016-6-20-Morning/</id>
-    <published>2016-06-20T09:42:13.000Z</published>
-    <updated>2016-06-20T09:56:04.518Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog%2Fposts%2Fimage%2F2016-620-Morning.jpg&quot; alt=&quot;Good Morning ~&quot;&gt;&lt;/p&gt;
-&lt;p&gt;今天是来美国的第三天，也是上班的第一天，昨天又是下午睡着了，一直睡到八九点钟才起来。&lt;/p&gt;
-&lt;p&gt;爬起来匆匆去超市买了点东西，看着美国物价不高，可是让我这种拿人民币买美国东西的人来看真的是够可以的了，趁着通心粉特价赶紧买了点，感觉这一周我是只能吃面食了… … &lt;/p&gt;
-&lt;p&gt;这两天倒时差还是有点蛋疼的，主要就是下午容易困，其他时间还好，我还是蛮喜欢起的早早的，安静。&lt;/p&gt;
-&lt;p&gt;要在这边呆四个月，如果能用中国的银行卡的话，正常活着应该是没什么问题，毕竟我又不用交房租，平时还有餐补，一个人的时候吃饭可以自己做，练习厨艺以后找个好老婆噻。而且说实话 Boston 也不是很大，靠步行和跑步已经足够我逛了。&lt;/p&gt;
-&lt;p&gt;早上四点多起来，锻炼，做早餐，浏览新闻，吃早餐，跑步，洗澡，然后现在写 blog，这样子有条不紊的感觉真的很好，果然时间还是要被自己支配才行。&lt;/p&gt;
-&lt;p&gt;Good Morning ~&lt;/p&gt;
-&lt;p&gt;今天也要好好加油啊~&lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog%2Fposts%2Fimage%2F2016-620-Morning.jpg&quot; alt=&quot;Good Morning ~&quot;&gt;&lt;/p&gt;
-&lt;p&gt;今天是来美国的第三天，也是上班的第一天，
     
     </summary>
     
