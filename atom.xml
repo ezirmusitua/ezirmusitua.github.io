@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jferroal.com/"/>
-  <updated>2016-07-04T11:19:26.940Z</updated>
+  <updated>2016-07-05T13:08:29.893Z</updated>
   <id>http://blog.jferroal.com/</id>
   
   <author>
@@ -14,6 +14,37 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2016-7-05 Morning</title>
+    <link href="http://blog.jferroal.com/2016/07/05/2016-7-05-Morning/"/>
+    <id>http://blog.jferroal.com/2016/07/05/2016-7-05-Morning/</id>
+    <published>2016-07-05T12:15:54.000Z</published>
+    <updated>2016-07-05T13:08:29.893Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-705-Morning.jpg&quot; alt=&quot;firework&quot;&gt;    &lt;/p&gt;
+&lt;p&gt;7月4日，美国的国庆节&lt;br&gt;7月5日，同济大学的毕业典礼&lt;br&gt;对的，就是我应该参加的那个&lt;br&gt;有时，事情总是很凑巧，间隔12个小时，我在这里做着本应该在那里做的事情&lt;br&gt;难道，存在着一种守恒嘛&lt;br&gt;不对，有一点不同的是心情吧，虽然没有亲身经历，但是总该有一点想法&lt;br&gt;毕业典礼上弥漫的是离愁&lt;br&gt;而在这里，只是没有什么人罢了  &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-705-Morning.jpg&quot; alt=&quot;sunset&quot;&gt;&lt;/p&gt;
+&lt;p&gt;我就在湖边静静地坐了两个小时&lt;br&gt;看鸭子，看夕阳，看秀恩爱的情侣&lt;br&gt;去你妈蛋，悲伤辣么大   &lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-705-Morning.jpg&quot; alt=&quot;ducks&quot;&gt;&lt;/p&gt;
+&lt;p&gt;因为各种原因，我还是没待到最后&lt;br&gt;还好看到了烟花，不然真亏死了&lt;br&gt;走到半路手机没电了，我特么的真以为自己露宿街头，被黑叔叔 xxxx 了&lt;br&gt;吓死老纸了，幸亏:  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;“爱 xxx 的人，运气总是不会太差 ~ “    &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;乱走居然还走到了，我都佩服我自己&lt;br&gt;回到家好累啊，领完毕业证了还要看户口迁移的东西怎么弄，蛋疼&lt;br&gt;一觉睡到早上7点多，感觉我的老年人的生活节奏要被打破了，日&lt;br&gt;早上下雨，没出去跑步，晚上再说吧&lt;br&gt;加油 ~  &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-705-Morning.jpg&quot; alt=&quot;firework&quot;&gt;    &lt;/p&gt;
+&lt;p&gt;7月4日，美国的国庆节&lt;br&gt;7月5日，同济大学的毕业典
+    
+    </summary>
+    
+    
+      <category term="daily" scheme="http://blog.jferroal.com/tags/daily/"/>
+    
+  </entry>
   
   <entry>
     <title>2016-7-04 Morning</title>
@@ -252,37 +283,6 @@
     
     
       <category term="Javascript, Promise" scheme="http://blog.jferroal.com/tags/Javascript-Promise/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2016-6-25 Morning</title>
-    <link href="http://blog.jferroal.com/2016/06/25/2016-6-25-Morning/"/>
-    <id>http://blog.jferroal.com/2016/06/25/2016-6-25-Morning/</id>
-    <published>2016-06-25T10:26:55.000Z</published>
-    <updated>2016-06-25T10:50:19.058Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-625-Morning.jpg&quot; alt=&quot;Cars&quot;&gt;  &lt;/p&gt;
-&lt;p&gt;早上迷迷糊糊的，还以为要上班呢，真是尴尬 … …   &lt;/p&gt;
-&lt;p&gt;昨天在办公室待到 10 点，但并没有感觉到做了很多事情，认真算的话这个效率实在是低的吓人  &lt;/p&gt;
-&lt;p&gt;也不是不想做东西，只是处于功能内测的阶段实在是没有什么可以连续做下去的事情，偶尔测出 bug 了再去修，没 bug 的时间就宕机了 … …  &lt;/p&gt;
-&lt;p&gt;在创业公司工作，不加班是不现实的，但还是应该考虑一下怎么样加班。以后每天 10:00 开始正式工作，中午歇上 1 个小时，下午工作到 17:00 ，然后在公司待到 20:00 走人。最后的三个小时在没有紧急情况 or 突发 bug 的情况下不工作，把这段时间看作是一段工作 / 学习混合的时间好了，人生苦短，我才不要浪费时间呢 ~  &lt;/p&gt;
-&lt;p&gt;早上没有跑步，晚上可以找些远一点的地方跑步去，正好看看晚上的 Boston 是个什么样子 (其实你就是懒 ! ! !) … &lt;/p&gt;
-&lt;p&gt;一会看看有没有什么食谱，我觉得把前天买的排骨烤了应该会很不错 ~   &lt;/p&gt;
-&lt;p&gt;最近在折腾 vim，感觉需要提升效率了，先一点一点的配置起来吧&lt;/p&gt;
-&lt;p&gt;就酱紫，周末好好休息 ~   &lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-625-Morning.jpg&quot; alt=&quot;Cars&quot;&gt;  &lt;/p&gt;
-&lt;p&gt;早上迷迷糊糊的，还以为要上班呢，真是尴尬 … …   &lt;/p&gt;
-&lt;p
-    
-    </summary>
-    
-    
-      <category term="daily" scheme="http://blog.jferroal.com/tags/daily/"/>
     
   </entry>
   
