@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.jferroal.com/2016/06/26/%E8%B0%88%E8%B0%88-Promise/</loc>
+    
+    <lastmod>2016-07-09T20:53:01.373Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.jferroal.com/2016/07/09/%E5%88%A9%E7%94%A8-Stripe-API-%E8%BF%9B%E8%A1%8C%E6%94%AF%E4%BB%98/</loc>
     
-    <lastmod>2016-07-09T20:51:12.390Z</lastmod>
+    <lastmod>2016-07-09T20:52:24.661Z</lastmod>
     
   </url>
   
@@ -82,13 +89,6 @@
     <loc>http://blog.jferroal.com/2016/06/28/2016-6-28-Morning/</loc>
     
     <lastmod>2016-06-29T10:55:32.687Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.jferroal.com/2016/06/26/%E8%B0%88%E8%B0%88-Promise/</loc>
-    
-    <lastmod>2016-06-27T11:15:50.511Z</lastmod>
     
   </url>
   
