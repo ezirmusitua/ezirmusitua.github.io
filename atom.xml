@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jferroal.com/"/>
-  <updated>2016-07-08T11:39:03.657Z</updated>
+  <updated>2016-07-09T20:51:12.390Z</updated>
   <id>http://blog.jferroal.com/</id>
   
   <author>
@@ -14,6 +14,100 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>利用 Stripe API 进行支付</title>
+    <link href="http://blog.jferroal.com/2016/07/09/%E5%88%A9%E7%94%A8-Stripe-API-%E8%BF%9B%E8%A1%8C%E6%94%AF%E4%BB%98/"/>
+    <id>http://blog.jferroal.com/2016/07/09/利用-Stripe-API-进行支付/</id>
+    <published>2016-07-09T18:01:03.000Z</published>
+    <updated>2016-07-09T20:51:12.390Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;第三方支付平台和-Stripe&quot;&gt;&lt;a href=&quot;#第三方支付平台和-Stripe&quot; class=&quot;headerlink&quot; title=&quot;第三方支付平台和 Stripe&quot;&gt;&lt;/a&gt;第三方支付平台和 Stripe&lt;/h3&gt;&lt;p&gt;对于某些网站应用，存在着支付功能的需求，如果从头开始实现一个完整的支付功能是不现实的，尤其对于创业型公司来说更是不可能的，不仅是时间与资金的问题，更多的是由于涉及到金钱，问题总会异常复杂。因此，更加快捷的方式是使用第三方支付平台提供的接口。&lt;br&gt;目前存在的一些第三方支付平台有:  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Alipay  &lt;/li&gt;
+&lt;li&gt;Paypal  &lt;/li&gt;
+&lt;li&gt;Ping ++  &lt;/li&gt;
+&lt;li&gt;Stripe  &lt;/li&gt;
+&lt;li&gt;…  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;上面提到的几个平台，就我个人而言听说过的是 Alipay、Paypal、Ping ++，之前真的不知道还有 Stripe 这个东西 。。。&lt;br&gt;但是今天的主角就是 Stripe。第三方支付平台那么多，Stripe 有什么好呢？&lt;br&gt;最终要的一点是，Stripe 提供了支付宝的集成，这是非常非常重要的一个优点呐。&lt;br&gt;对我而言，如果需要购买一些外国服务，除了考虑性价比，很重要的一点是要看服务商支持的支付方式，如果支持支付宝付款对我来说真的是非常方便的(比如域名服务商 NameSilo 和 VPS 提供商搬瓦工就都支持支付宝付款)。&lt;br&gt;对于外国用户也是一样，如果国内的服务支持使用信用卡付款，那么他么肯定会觉得非常方便 ~&lt;br&gt;所以呢，这就是 Stripe 的优点了，只需要为网站集成 Stripe 的支付服务就可以同时应付国内和国外的支付需求。  &lt;/p&gt;
+&lt;h3 id=&quot;Stripe-API-的使用与测试&quot;&gt;&lt;a href=&quot;#Stripe-API-的使用与测试&quot; class=&quot;headerlink&quot; title=&quot;Stripe API 的使用与测试&quot;&gt;&lt;/a&gt;Stripe API 的使用与测试&lt;/h3&gt;&lt;p&gt;港真，Stripe 的 API 真的灰常简单，Server 端所有的操作都是围绕着 Stripe API 中提供过的几种 Object 进行 operate 而已，真心没有什么难的。  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://stripe.com/docs/api&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;API 文档&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stripe.com/docs/examples&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;官方例子&lt;/a&gt;  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;只要能够看懂 Stripe 的文档，编写 Server 代码是完全没有任何问题的。&lt;br&gt;当我们实现了功能之后，必然需要测试一下功能，每一个第三方支付平台都会提供用于测试的 sandbox 环境，Stripe 当然也不例外。&lt;br&gt;对于测试 Stripe API，建立一个测试账号的方法是:  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;注册一个 Stripe 账号  &lt;/li&gt;
+&lt;li&gt;登录账号，进入 &lt;a href=&quot;https://dashboard.stripe.com/test/dashboard&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;dashboard&lt;/a&gt;    &lt;/li&gt;
+&lt;li&gt;右上角 Your account -&amp;gt; Account Setting -&amp;gt; API Keys (请确保自己在 test 模式下)    &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;然后我们就能获得测试用的 API Keys (测试时请选择前缀中为 test 的公私钥)进行测试了，测试中允许使用的卡的信息如下:  &lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;可以用来进行测试用的&lt;a href=&quot;https://stripe.com/docs/testing&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;测试卡&lt;/a&gt;列表  &lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;如果是测试支付宝，那么 6 位的验证码输入 123456，身份证后六位输入 12345 就不会有问题了。&lt;br&gt;就我在学习的过程中发现的问题，不在于如何使用 API，而在于 Stripe 如何与系统集成在一起。下面，着重笔墨在如何 Stripe 与整合到你的网站中去。&lt;/p&gt;
+&lt;h3 id=&quot;Stripe-提供的工具&quot;&gt;&lt;a href=&quot;#Stripe-提供的工具&quot; class=&quot;headerlink&quot; title=&quot;Stripe 提供的工具&quot;&gt;&lt;/a&gt;Stripe 提供的工具&lt;/h3&gt;&lt;p&gt;在使用中，我们会用到的 stripe 提供的东西有以下三种:  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&quot;https://stripe.com/docs/stripe.js&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;stripe.js&lt;/a&gt;   &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stripe.com/docs/checkout&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;checkout.js&lt;/a&gt;  &lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;https://stripe.com/docs/libraries&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;stripe&lt;/a&gt;    &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;这三样东西是不同的，其中&lt;code&gt;1&lt;/code&gt;/&lt;code&gt;2&lt;/code&gt;用于&lt;code&gt;web&lt;/code&gt;获取&lt;code&gt;stripeToken&lt;/code&gt;，&lt;code&gt;3&lt;/code&gt; 用于&lt;code&gt;server&lt;/code&gt;执行各种各样的操作。&lt;br&gt;直接这么说恐怕大家还是很难理解。&lt;br&gt;首先我们要知道，用户的支付方式(信用卡信息，支付宝账户，银行账户等等)信息是非常敏感的信息，如果没有相关的资质，我们是绝对不应该保存用户的支付方式信息的。当涉及到肮脏的金钱交易时，知道的越少总是越好的 ~&lt;br&gt;因此，敏感的信息最好是不经我们手的，stripe.js 和 checkout.js 就是 Stripe 提供给我们的将敏感信息传递给他们的方法，所以呢:  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;stripe.js 和 checkout.js 是存在于 web 端的(从 &lt;a href=&quot;https://js.stripe.com/v2/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://js.stripe.com/v2/&lt;/a&gt; 处引入到页面中的)  &lt;/li&gt;
+&lt;li&gt;我们在页面中提供表单用于填写用户支付方式信息，然后使用 stripe.js 和 checkout.js 将这些信息传递给 Stripe  &lt;/li&gt;
+&lt;li&gt;我们将用户的支付方式提供给了 Stripe 之后，Stripe 进行相关的验证，并且返回一个 stripeToken 给我们  &lt;/li&gt;
+&lt;li&gt;我们可以使用这些&lt;strong&gt;一次性&lt;/strong&gt;的 stripeToken 再进行支付等相关操作，而这些操作就是通过服务器端的 stripe 进行的啦  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;所以整体的样子应该是这样的:&lt;br&gt;&lt;a href=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/stripe%20%E6%94%AF%E4%BB%98%E6%B5%81%E7%A8%8B.png&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Stripe 工具关系&lt;/a&gt;  &lt;/p&gt;
+&lt;h4 id=&quot;stripe-js-和-checkout-js&quot;&gt;&lt;a href=&quot;#stripe-js-和-checkout-js&quot; class=&quot;headerlink&quot; title=&quot;stripe.js 和 checkout.js&quot;&gt;&lt;/a&gt;stripe.js 和 checkout.js&lt;/h4&gt;&lt;p&gt;stripe.js 的主要功能是一样的，我们通过这两个工具在 web 端获取 stripeToken。&lt;br&gt;stripe.js 只是 Stripe 提供给我们的用于获取 stripeToken 的工具，我们将支付方式信息交给 stripe.js，然后去做相关的事情，因此，使用 stripe.js 我们需要自己设计获取用户支付方式的表单，这是它的优点也是缺点。&lt;br&gt;我们利用 stripe.js 的 API 向 Stripe 发送请求，返回的 response.id 就是 stripeToken。后续的操作就是将 token 附加到请求中发送给 server 进行相关的操作。&lt;br&gt;引入 checkout.js 则会提供给我们一个现成的支付方式信息获取的表单，对这个表单我们只能控制输入项而无法决定表单的样式，这是它的缺点同时也是优点。&lt;br&gt;我们在设置 checkout.js 的表单的时候，需要提供一个回调函数，回调函数得到的参数是 token，和 args，我们需要在回调函数中将 token.id 传递给 server 进行相关的操作。&lt;br&gt;当然，stripe.js 和 checkout.js 最大的区别不止是否允许自定义表单样式，更重要的是如果需要使用支付宝的话，必须选择使用 checkout.js。因为 stripe.js 中是不提供&lt;code&gt;alipay_account&lt;/code&gt;相关的操作的。&lt;br&gt;除了使用 stripe.js 和 checkout.js 获取 stripeToken 外，我们还可以使用 server 端的 stripe.tokens API 进行获取 stripeToken 的操作，但我个人不推荐这样的做法，因为使用这种方法的话，用户支付方式信息的传递就需要经过我们的 server，这样可能会存在安全责任，同时，这种方式并不支持 alipay。  &lt;/p&gt;
+&lt;h4 id=&quot;server-的-stripe-API&quot;&gt;&lt;a href=&quot;#server-的-stripe-API&quot; class=&quot;headerlink&quot; title=&quot;server 的 stripe API&quot;&gt;&lt;/a&gt;server 的 stripe API&lt;/h4&gt;&lt;p&gt;前面已经说到，stripe 的 server API 非常简单，大致上可以归纳为:  &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;stripe[object][action](param1[, param2], callback)
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参数的个数主要是与&lt;code&gt;action&lt;/code&gt;挂钩。&lt;br&gt;其中会使用到 web 传来的&lt;code&gt;stripeToken&lt;/code&gt;的 object 和 action 主要有:  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;charges – create – source  &lt;/li&gt;
+&lt;li&gt;custoemrs – create – [source]  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&quot;站点内集成-Stripe-支付服务&quot;&gt;&lt;a href=&quot;#站点内集成-Stripe-支付服务&quot; class=&quot;headerlink&quot; title=&quot;站点内集成 Stripe 支付服务&quot;&gt;&lt;/a&gt;站点内集成 Stripe 支付服务&lt;/h3&gt;&lt;p&gt;本来这块想讲一下自己对于整套系统的见解，后来看到了标题，发现如果讲那些就跑偏了，删掉之前的话，接着讲讲本节的重点，在站点内集成 Stripe 支付服务。&lt;br&gt;如果仔细看了上面的内容，那么这节的内容应该非常容易理解。&lt;br&gt;首先集成分为两个部分，web 端和 server 端，其实如果不需要使用&lt;code&gt;支付宝&lt;/code&gt;服务的话，实际上是可以在 web 端做什么的，但是个人不推荐这样的做法。&lt;br&gt;在 web 端我们: &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;引入 stripe.js / checkout.js &lt;/li&gt;
+&lt;li&gt;为 stripe.js / checkout.js 设置公钥(从 dashboard 的 API Keys 中获取)  &lt;/li&gt;
+&lt;li&gt;增加支付方式/直接使用支付方式付款时将支付方式信息传给 Stripe 获取 stripeToken  &lt;/li&gt;
+&lt;li&gt;将获取到的 stripeToken 传递给 server  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;在 server 端我们:  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;引入 stripe lib  &lt;/li&gt;
+&lt;li&gt;设置 stripe 需要的私钥  &lt;/li&gt;
+&lt;li&gt;利用 stripe 提供的各种 API 进行操作  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;不涉及具体细节的集成过程就是这么简单，并没有任何复杂的地方。  &lt;/p&gt;
+&lt;h3 id=&quot;一些想法&quot;&gt;&lt;a href=&quot;#一些想法&quot; class=&quot;headerlink&quot; title=&quot;一些想法&quot;&gt;&lt;/a&gt;一些想法&lt;/h3&gt;&lt;p&gt;其实在上面一节中要讲的东西基本上就已经讲完了，下面的使一些个人的想法:  &lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;公私密钥对是非常重要的东西，一定要以安全的方式保存  &lt;/li&gt;
+&lt;li&gt;能不持有的信息尽量不要持有  &lt;/li&gt;
+&lt;li&gt;支付服务中最重要的两个 Object 是 Customer 和 Charge，退款什么的 Stripe 的 Dashboard 就很不错了    &lt;/li&gt;
+&lt;li&gt;为每个用户都建立一个 Customer 是不需要 Token 的，增加 source 才需要  &lt;/li&gt;
+&lt;li&gt;如果有 Customer 了，通过 Customer 就可以完成 Charge 的建立，非常方便  &lt;/li&gt;
+&lt;li&gt;听说 Stripe 对移动端提供的 API 并不是非常友好呐 ~  &lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;第三方支付平台和-Stripe&quot;&gt;&lt;a href=&quot;#第三方支付平台和-Stripe&quot; class=&quot;headerlink&quot; title=&quot;第三方支付平台和 Stripe&quot;&gt;&lt;/a&gt;第三方支付平台和 Stripe&lt;/h3&gt;&lt;p&gt;对于某些网站应用，存在着支付功能的需
+    
+    </summary>
+    
+    
+      <category term="javascript" scheme="http://blog.jferroal.com/tags/javascript/"/>
+    
+      <category term="stripe" scheme="http://blog.jferroal.com/tags/stripe/"/>
+    
+      <category term="alipay" scheme="http://blog.jferroal.com/tags/alipay/"/>
+    
+  </entry>
   
   <entry>
     <title>2016-7-08 Morning</title>
@@ -246,27 +340,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-630-Morning.jpg&quot; alt=&quot;sunshine&quot;&gt;&lt;br&gt;月底了，此时此刻，在中国的那一边，他们正在聚餐吧，差不多了，大学生涯就要
-    
-    </summary>
-    
-    
-      <category term="daily" scheme="http://blog.jferroal.com/tags/daily/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2016-6-29 Morning</title>
-    <link href="http://blog.jferroal.com/2016/06/29/2016-6-29-Morning/"/>
-    <id>http://blog.jferroal.com/2016/06/29/2016-6-29-Morning/</id>
-    <published>2016-06-29T10:30:27.000Z</published>
-    <updated>2016-06-30T10:34:53.554Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-629-Morning.jpg&quot; alt=&quot;playground&quot;&gt;&lt;br&gt;今天总算起的稍微早了那么一点(虽然还是比原定的时间晚了 1h 吧)&lt;br&gt;这两天 Boston 的天气不怎么好额，各种阴天下雨&lt;br&gt;昨天去吃了吃美帝的麦当劳，发现跟国内的完全不一样，没看到那么多的套餐，很多都是要单点的，吃了个巨无霸和龙虾卷，感觉还可以，饮料任意，真心喜欢那个蓝莓味的&lt;br&gt;突然发现这两天自己都快变成 debug machine 了，各种找 bug。&lt;br&gt;bug 的表现是某些 feed 无法分享给好友，生成了 Message 但是在利用 LC 推送的时候出现问题，F12 后发现 REUSE 错误，断定是 LC 的问题。&lt;br&gt;从 Controller 里面开始找，逐步定位到 LC 的 room.send 方法，发现消息发送到一半就出现问题，并没有返回，此时觉得应该是传给 send 方法的 data 参数有问题，果然替换参数后可以执行，确定原因，然后观察 data，怀疑是 data 过大导致无法被 LC 使用，打印大小，验证了猜想。&lt;br&gt;终于半自主的撸了两个小界面，海森 ~&lt;br&gt;好好加油，have a nice day ~  &lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-629-Morning.jpg&quot; alt=&quot;playground&quot;&gt;&lt;br&gt;今天总算起的稍微早了那么一点(虽然还是比原定的时间晚了 1h 吧)&lt;
     
     </summary>
     

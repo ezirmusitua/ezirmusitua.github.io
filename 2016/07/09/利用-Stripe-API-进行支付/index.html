@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      利用 Stripe API 进行支付 | Jferroal&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Jferroal">
+    
+    
+
+    <meta name="description" content="第三方支付平台和 Stripe对于某些网站应用，存在着支付功能的需求，如果从头开始实现一个完整的支付功能是不现实的，尤其对于创业型公司来说更是不可能的，不仅是时间与资金的问题，更多的是由于涉及到金钱，问题总会异常复杂。因此，更加快捷的方式是使用第三方支付平台提供的接口。目前存在的一些第三方支付平台有:  
+
+Alipay  
+Paypal  
+Ping ++  
+Stripe  
+…  
+
+上面提">
+<meta property="og:type" content="article">
+<meta property="og:title" content="利用 Stripe API 进行支付 | Jferroal's Blog">
+<meta property="og:url" content="http://blog.jferroal.com/2016/07/09/利用-Stripe-API-进行支付/index.html">
+<meta property="og:site_name" content="Jferroal's Blog">
+<meta property="og:description" content="第三方支付平台和 Stripe对于某些网站应用，存在着支付功能的需求，如果从头开始实现一个完整的支付功能是不现实的，尤其对于创业型公司来说更是不可能的，不仅是时间与资金的问题，更多的是由于涉及到金钱，问题总会异常复杂。因此，更加快捷的方式是使用第三方支付平台提供的接口。目前存在的一些第三方支付平台有:  
+
+Alipay  
+Paypal  
+Ping ++  
+Stripe  
+…  
+
+上面提">
+<meta property="og:updated_time" content="2016-07-09T20:51:12.390Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="利用 Stripe API 进行支付 | Jferroal's Blog">
+<meta name="twitter:description" content="第三方支付平台和 Stripe对于某些网站应用，存在着支付功能的需求，如果从头开始实现一个完整的支付功能是不现实的，尤其对于创业型公司来说更是不可能的，不仅是时间与资金的问题，更多的是由于涉及到金钱，问题总会异常复杂。因此，更加快捷的方式是使用第三方支付平台提供的接口。目前存在的一些第三方支付平台有:  
+
+Alipay  
+Paypal  
+Ping ++  
+Stripe  
+…  
+
+上面提">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Jferroal&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          记录人生中不同的体验
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/someus" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">利用 Stripe API 进行支付</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-09" class="post-meta__date date">2016-07-09</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/alipay/">alipay</a>, <a class="tags-link" href="/tags/javascript/">javascript</a>, <a class="tags-link" href="/tags/stripe/">stripe</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <h3 id="第三方支付平台和-Stripe"><a href="#第三方支付平台和-Stripe" class="headerlink" title="第三方支付平台和 Stripe"></a>第三方支付平台和 Stripe</h3><p>对于某些网站应用，存在着支付功能的需求，如果从头开始实现一个完整的支付功能是不现实的，尤其对于创业型公司来说更是不可能的，不仅是时间与资金的问题，更多的是由于涉及到金钱，问题总会异常复杂。因此，更加快捷的方式是使用第三方支付平台提供的接口。<br>目前存在的一些第三方支付平台有:  </p>
+<ol>
+<li>Alipay  </li>
+<li>Paypal  </li>
+<li>Ping ++  </li>
+<li>Stripe  </li>
+<li>…  </li>
+</ol>
+<p>上面提到的几个平台，就我个人而言听说过的是 Alipay、Paypal、Ping ++，之前真的不知道还有 Stripe 这个东西 。。。<br>但是今天的主角就是 Stripe。第三方支付平台那么多，Stripe 有什么好呢？<br>最终要的一点是，Stripe 提供了支付宝的集成，这是非常非常重要的一个优点呐。<br>对我而言，如果需要购买一些外国服务，除了考虑性价比，很重要的一点是要看服务商支持的支付方式，如果支持支付宝付款对我来说真的是非常方便的(比如域名服务商 NameSilo 和 VPS 提供商搬瓦工就都支持支付宝付款)。<br>对于外国用户也是一样，如果国内的服务支持使用信用卡付款，那么他么肯定会觉得非常方便 ~<br>所以呢，这就是 Stripe 的优点了，只需要为网站集成 Stripe 的支付服务就可以同时应付国内和国外的支付需求。  </p>
+<h3 id="Stripe-API-的使用与测试"><a href="#Stripe-API-的使用与测试" class="headerlink" title="Stripe API 的使用与测试"></a>Stripe API 的使用与测试</h3><p>港真，Stripe 的 API 真的灰常简单，Server 端所有的操作都是围绕着 Stripe API 中提供过的几种 Object 进行 operate 而已，真心没有什么难的。  </p>
+<ol>
+<li><a href="https://stripe.com/docs/api" target="_blank" rel="external">API 文档</a>  </li>
+<li><a href="https://stripe.com/docs/examples" target="_blank" rel="external">官方例子</a>  </li>
+</ol>
+<p>只要能够看懂 Stripe 的文档，编写 Server 代码是完全没有任何问题的。<br>当我们实现了功能之后，必然需要测试一下功能，每一个第三方支付平台都会提供用于测试的 sandbox 环境，Stripe 当然也不例外。<br>对于测试 Stripe API，建立一个测试账号的方法是:  </p>
+<ol>
+<li>注册一个 Stripe 账号  </li>
+<li>登录账号，进入 <a href="https://dashboard.stripe.com/test/dashboard" target="_blank" rel="external">dashboard</a>    </li>
+<li>右上角 Your account -&gt; Account Setting -&gt; API Keys (请确保自己在 test 模式下)    </li>
+</ol>
+<p>然后我们就能获得测试用的 API Keys (测试时请选择前缀中为 test 的公私钥)进行测试了，测试中允许使用的卡的信息如下:  </p>
+<blockquote>
+<p>可以用来进行测试用的<a href="https://stripe.com/docs/testing" target="_blank" rel="external">测试卡</a>列表  </p>
+</blockquote>
+<p>如果是测试支付宝，那么 6 位的验证码输入 123456，身份证后六位输入 12345 就不会有问题了。<br>就我在学习的过程中发现的问题，不在于如何使用 API，而在于 Stripe 如何与系统集成在一起。下面，着重笔墨在如何 Stripe 与整合到你的网站中去。</p>
+<h3 id="Stripe-提供的工具"><a href="#Stripe-提供的工具" class="headerlink" title="Stripe 提供的工具"></a>Stripe 提供的工具</h3><p>在使用中，我们会用到的 stripe 提供的东西有以下三种:  </p>
+<ol>
+<li><a href="https://stripe.com/docs/stripe.js" target="_blank" rel="external">stripe.js</a>   </li>
+<li><a href="https://stripe.com/docs/checkout" target="_blank" rel="external">checkout.js</a>  </li>
+<li><a href="https://stripe.com/docs/libraries" target="_blank" rel="external">stripe</a>    </li>
+</ol>
+<p>这三样东西是不同的，其中<code>1</code>/<code>2</code>用于<code>web</code>获取<code>stripeToken</code>，<code>3</code> 用于<code>server</code>执行各种各样的操作。<br>直接这么说恐怕大家还是很难理解。<br>首先我们要知道，用户的支付方式(信用卡信息，支付宝账户，银行账户等等)信息是非常敏感的信息，如果没有相关的资质，我们是绝对不应该保存用户的支付方式信息的。当涉及到肮脏的金钱交易时，知道的越少总是越好的 ~<br>因此，敏感的信息最好是不经我们手的，stripe.js 和 checkout.js 就是 Stripe 提供给我们的将敏感信息传递给他们的方法，所以呢:  </p>
+<ol>
+<li>stripe.js 和 checkout.js 是存在于 web 端的(从 <a href="https://js.stripe.com/v2/" target="_blank" rel="external">https://js.stripe.com/v2/</a> 处引入到页面中的)  </li>
+<li>我们在页面中提供表单用于填写用户支付方式信息，然后使用 stripe.js 和 checkout.js 将这些信息传递给 Stripe  </li>
+<li>我们将用户的支付方式提供给了 Stripe 之后，Stripe 进行相关的验证，并且返回一个 stripeToken 给我们  </li>
+<li>我们可以使用这些<strong>一次性</strong>的 stripeToken 再进行支付等相关操作，而这些操作就是通过服务器端的 stripe 进行的啦  </li>
+</ol>
+<p>所以整体的样子应该是这样的:<br><a href="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/stripe%20%E6%94%AF%E4%BB%98%E6%B5%81%E7%A8%8B.png" target="_blank" rel="external">Stripe 工具关系</a>  </p>
+<h4 id="stripe-js-和-checkout-js"><a href="#stripe-js-和-checkout-js" class="headerlink" title="stripe.js 和 checkout.js"></a>stripe.js 和 checkout.js</h4><p>stripe.js 的主要功能是一样的，我们通过这两个工具在 web 端获取 stripeToken。<br>stripe.js 只是 Stripe 提供给我们的用于获取 stripeToken 的工具，我们将支付方式信息交给 stripe.js，然后去做相关的事情，因此，使用 stripe.js 我们需要自己设计获取用户支付方式的表单，这是它的优点也是缺点。<br>我们利用 stripe.js 的 API 向 Stripe 发送请求，返回的 response.id 就是 stripeToken。后续的操作就是将 token 附加到请求中发送给 server 进行相关的操作。<br>引入 checkout.js 则会提供给我们一个现成的支付方式信息获取的表单，对这个表单我们只能控制输入项而无法决定表单的样式，这是它的缺点同时也是优点。<br>我们在设置 checkout.js 的表单的时候，需要提供一个回调函数，回调函数得到的参数是 token，和 args，我们需要在回调函数中将 token.id 传递给 server 进行相关的操作。<br>当然，stripe.js 和 checkout.js 最大的区别不止是否允许自定义表单样式，更重要的是如果需要使用支付宝的话，必须选择使用 checkout.js。因为 stripe.js 中是不提供<code>alipay_account</code>相关的操作的。<br>除了使用 stripe.js 和 checkout.js 获取 stripeToken 外，我们还可以使用 server 端的 stripe.tokens API 进行获取 stripeToken 的操作，但我个人不推荐这样的做法，因为使用这种方法的话，用户支付方式信息的传递就需要经过我们的 server，这样可能会存在安全责任，同时，这种方式并不支持 alipay。  </p>
+<h4 id="server-的-stripe-API"><a href="#server-的-stripe-API" class="headerlink" title="server 的 stripe API"></a>server 的 stripe API</h4><p>前面已经说到，stripe 的 server API 非常简单，大致上可以归纳为:  </p>
+<pre><code>stripe[object][action](param1[, param2], callback)
+</code></pre><p>参数的个数主要是与<code>action</code>挂钩。<br>其中会使用到 web 传来的<code>stripeToken</code>的 object 和 action 主要有:  </p>
+<ol>
+<li>charges – create – source  </li>
+<li>custoemrs – create – [source]  </li>
+</ol>
+<h3 id="站点内集成-Stripe-支付服务"><a href="#站点内集成-Stripe-支付服务" class="headerlink" title="站点内集成 Stripe 支付服务"></a>站点内集成 Stripe 支付服务</h3><p>本来这块想讲一下自己对于整套系统的见解，后来看到了标题，发现如果讲那些就跑偏了，删掉之前的话，接着讲讲本节的重点，在站点内集成 Stripe 支付服务。<br>如果仔细看了上面的内容，那么这节的内容应该非常容易理解。<br>首先集成分为两个部分，web 端和 server 端，其实如果不需要使用<code>支付宝</code>服务的话，实际上是可以在 web 端做什么的，但是个人不推荐这样的做法。<br>在 web 端我们: </p>
+<ol>
+<li>引入 stripe.js / checkout.js </li>
+<li>为 stripe.js / checkout.js 设置公钥(从 dashboard 的 API Keys 中获取)  </li>
+<li>增加支付方式/直接使用支付方式付款时将支付方式信息传给 Stripe 获取 stripeToken  </li>
+<li>将获取到的 stripeToken 传递给 server  </li>
+</ol>
+<p>在 server 端我们:  </p>
+<ol>
+<li>引入 stripe lib  </li>
+<li>设置 stripe 需要的私钥  </li>
+<li>利用 stripe 提供的各种 API 进行操作  </li>
+</ol>
+<p>不涉及具体细节的集成过程就是这么简单，并没有任何复杂的地方。  </p>
+<h3 id="一些想法"><a href="#一些想法" class="headerlink" title="一些想法"></a>一些想法</h3><p>其实在上面一节中要讲的东西基本上就已经讲完了，下面的使一些个人的想法:  </p>
+<ol>
+<li>公私密钥对是非常重要的东西，一定要以安全的方式保存  </li>
+<li>能不持有的信息尽量不要持有  </li>
+<li>支付服务中最重要的两个 Object 是 Customer 和 Charge，退款什么的 Stripe 的 Dashboard 就很不错了    </li>
+<li>为每个用户都建立一个 Customer 是不需要 Token 的，增加 source 才需要  </li>
+<li>如果有 Customer 了，通过 Customer 就可以完成 Charge 的建立，非常方便  </li>
+<li>听说 Stripe 对移动端提供的 API 并不是非常友好呐 ~  </li>
+</ol>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'jferroalsblog'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2016. | Jferroal's Blog <br/> <br/> Powered by <a href="https://hexo.io/">Hexo</a>强力驱动 | 主题 <a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+    <script src="http://o72dm2udp.bkt.clouddn.com/main.js"></script>
+    <script src="http://o72dm2udp.bkt.clouddn.com/scale.fix.js"></script>
+    
+
+    
+
+    <script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="http://o72dm2udp.bkt.clouddn.com/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
