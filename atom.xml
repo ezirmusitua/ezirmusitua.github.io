@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jferroal.com/"/>
-  <updated>2016-07-12T11:48:27.837Z</updated>
+  <updated>2016-07-14T14:40:10.126Z</updated>
   <id>http://blog.jferroal.com/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2016-7-14 Morning</title>
+    <link href="http://blog.jferroal.com/2016/07/14/2016-7-14-Morning/"/>
+    <id>http://blog.jferroal.com/2016/07/14/2016-7-14-Morning/</id>
+    <published>2016-07-14T14:29:15.000Z</published>
+    <updated>2016-07-14T14:40:10.126Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/2016-714-Morning.jpg&quot; alt=&quot;Night-China Town&quot;&gt;&lt;br&gt;这两天好忙，前天通宵到半夜，昨天早上也没怎么休息，昨天晚上开 IPM 到深夜，晚上去 China Town 吃肥牛火锅，到宿舍都 2 点了。&lt;br&gt;据说忙完下个版本就闲了，希望如此吧。&lt;br&gt;这两天好多该干的事情都没干，但是我都记着呢，明天如果正常去把欠的跑步和日语练习都不上，习惯养成不容易，所以才更要珍惜呐喂 ~&lt;br&gt;今天的事应该不多，把代码 clean 一下，修复小 bug，完善功能，思考一下支付相关的东西。&lt;br&gt;忙碌的日子很蛋疼，但是也很充实(虽然我还是喜欢慵懒一点)，这段时间快点过去吧，我要回复老年人的生活:-P&lt;br&gt;加油加油，同事们还没来，我要划划水，梳理一下这两天的事情先。&lt;br&gt;加油 ~ &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/2016-714-Morning.jpg&quot; alt=&quot;Night-China Town&quot;&gt;&lt;br&gt;这两天好忙，前天通宵到半夜，昨天早上也没怎么休息，昨天晚上开 IPM 到深夜，晚上去 Ch
+    
+    </summary>
+    
+    
+      <category term="daily" scheme="http://blog.jferroal.com/tags/daily/"/>
+    
+  </entry>
   
   <entry>
     <title>2016-7-12 Morning</title>
@@ -349,27 +370,6 @@
     <summary type="html">
     
       &lt;p&gt;&lt;img src=&quot;&quot; alt=&quot;&quot;&gt;&lt;br&gt;不好的是习惯&lt;br&gt;像天上的云&lt;br&gt;每一种不同的形状只是风的撩拨&lt;br&gt;那么虚幻&lt;br&gt;那么湛蓝&lt;br&gt;那么遥远&lt;br&gt;你若是云不是霾&lt;br&gt;总会被无知的热爱&lt;br&gt;谁能看穿你的内心&lt;br&gt;包裹着厚厚的棉花糖&lt;br&gt;谁看不透你
-    
-    </summary>
-    
-    
-      <category term="daily" scheme="http://blog.jferroal.com/tags/daily/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2016-7-03 Evening</title>
-    <link href="http://blog.jferroal.com/2016/07/03/2016-7-03-Evening/"/>
-    <id>http://blog.jferroal.com/2016/07/03/2016-7-03-Evening/</id>
-    <published>2016-07-04T02:47:55.000Z</published>
-    <updated>2016-07-04T03:02:17.567Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-703-Evening.jpg&quot; alt=&quot;New Earphone&quot;&gt;&lt;br&gt;啦啦啦，今天大放血，终于买了自己想要的耳机，Bose QC20i，虽然我的手机是 Android 的，但是这丝毫不影响我用呐 ~&lt;br&gt;降噪效果一流，A New World! 安静的个人世界&lt;br&gt;最近吃了好几顿汉堡，刚觉并不是很好吃，下午把剩的鸡胸肉拿出来做了鸡肉松，第一次用烤箱，感觉还不错，火候够的鸡肉松味道还是不错的&lt;br&gt;CBug 昨天到了，今天还在倒时差，以后可以有人一起出去转啦，NICE ~&lt;br&gt;明天独立日，貌似王涵会在办公室，我才不要过去呢，下午去待会儿，晚上找人带我们去看烟花去&lt;br&gt;这两天终于把 HTML5/CSS3/SASS 看完了，然后今天把 FreeCodeCamp 的一个 Project 做完了，用到了最近学的 Flex 布局和一些 CSS 布局的知识点，然后顺便把 CSS 代码变成了 SASS 代码 ~&lt;br&gt;接下来接着刷 FreeCodeCamp，JS 部分的题目没有什么难度，赶紧搞定才好&lt;br&gt;明天要折腾一下 Stripe，希望明天能直接弄一个大概能用的东西出来，先设计好一个原型吧 ~&lt;br&gt;下个月买个手机好了，这个月没什么想买的东西了&lt;br&gt;老年人该睡觉了，么么哒 ~&lt;br&gt;晚安 ~  &lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-703-Evening.jpg&quot; alt=&quot;New Earphone&quot;&gt;&lt;br&gt;啦啦啦，今天大放血，终于买了自己想要的耳机，Bose QC20i
     
     </summary>
     
