@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    
+
+    <title>
+      配置 windows 下的命令行工具 | Jferroal&#39;s Blog 
+    </title>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    
+      <meta name="author" content="Jferroal">
+    
+    
+
+    <meta name="description" content="终于扛过了蛋疼的两周，据说接下就不会这么赶了，应该不会还这么忙碌吧，因为是据说，所以我整个人还是在一种不稳定的状态中的，就看明天 IPM 怎么说了。最近这两周过的好蛋疼啊，要说是没有规律倒也不是，但是每天的规律就是赶工!嗯，不是进度慢效率低，我是真的尽力了，只是我一个人不能把所有的东西都搞定吧，而且还总有人在你后面哔哔哔，大家相互理解一下就好，真心累。好在周五很顺利 ~ Nice  
+
+上周的时候">
+<meta property="og:type" content="article">
+<meta property="og:title" content="配置 windows 下的命令行工具 | Jferroal's Blog">
+<meta property="og:url" content="http://blog.jferroal.com/2016/07/24/配置-windows-下的命令行工具/index.html">
+<meta property="og:site_name" content="Jferroal's Blog">
+<meta property="og:description" content="终于扛过了蛋疼的两周，据说接下就不会这么赶了，应该不会还这么忙碌吧，因为是据说，所以我整个人还是在一种不稳定的状态中的，就看明天 IPM 怎么说了。最近这两周过的好蛋疼啊，要说是没有规律倒也不是，但是每天的规律就是赶工!嗯，不是进度慢效率低，我是真的尽力了，只是我一个人不能把所有的东西都搞定吧，而且还总有人在你后面哔哔哔，大家相互理解一下就好，真心累。好在周五很顺利 ~ Nice  
+
+上周的时候">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-Setting-Main.png">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-Setting-Main-BackgroundImage.png">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-Tasks.png">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-Color-Schema.png">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-Normal.png">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-Setting-Main.png">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-split-windows.png">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-Vim.png">
+<meta property="og:updated_time" content="2016-07-24T22:17:45.091Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="配置 windows 下的命令行工具 | Jferroal's Blog">
+<meta name="twitter:description" content="终于扛过了蛋疼的两周，据说接下就不会这么赶了，应该不会还这么忙碌吧，因为是据说，所以我整个人还是在一种不稳定的状态中的，就看明天 IPM 怎么说了。最近这两周过的好蛋疼啊，要说是没有规律倒也不是，但是每天的规律就是赶工!嗯，不是进度慢效率低，我是真的尽力了，只是我一个人不能把所有的东西都搞定吧，而且还总有人在你后面哔哔哔，大家相互理解一下就好，真心累。好在周五很顺利 ~ Nice  
+
+上周的时候">
+<meta name="twitter:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-Setting-Main.png">
+    
+    
+    
+      <link rel="icon" type="image/x-icon" href="/favicon.png">
+    
+    <link rel="stylesheet" href="/css/uno.css">
+    <link rel="stylesheet" href="/css/highlight.css">
+    <link rel="stylesheet" href="/css/archive.css">
+    <link rel="stylesheet" href="/css/china-social-icon.css">
+
+</head>
+<body>
+
+    <span class="mobile btn-mobile-menu">
+        <i class="icon icon-list btn-mobile-menu__icon"></i>
+        <i class="icon icon-x-circle btn-mobile-close__icon hidden"></i>
+    </span>
+
+    
+
+<header class="panel-cover panel-cover--collapsed">
+
+
+  <div class="panel-main">
+
+  
+    <div class="panel-main__inner panel-inverted">
+    <div class="panel-main__content">
+
+        
+
+        <h1 class="panel-cover__title panel-title"><a href="/" title="link to homepage">Jferroal&#39;s Blog</a></h1>
+        <hr class="panel-cover__divider" />
+
+        
+        <p class="panel-cover__description">
+          记录人生中不同的体验
+        </p>
+        <hr class="panel-cover__divider panel-cover__divider--secondary" />
+        
+
+        <div class="navigation-wrapper">
+
+          <nav class="cover-navigation cover-navigation--primary">
+            <ul class="navigation">
+
+              
+                
+                <li class="navigation__item"><a href="/#blog" title="" class="blog-button">首页</a></li>
+              
+                
+                <li class="navigation__item"><a href="/about" title="" class="">关于</a></li>
+              
+                
+                <li class="navigation__item"><a href="/archive" title="" class="">归档</a></li>
+              
+
+            </ul>
+          </nav>
+
+          <!-- ----------------------------
+To add a new social icon simply duplicate one of the list items from below
+and change the class in the <i> tag to match the desired social network
+and then add your link to the <a>. Here is a full list of social network
+classes that you can use:
+
+    icon-social-500px
+    icon-social-behance
+    icon-social-delicious
+    icon-social-designer-news
+    icon-social-deviant-art
+    icon-social-digg
+    icon-social-dribbble
+    icon-social-facebook
+    icon-social-flickr
+    icon-social-forrst
+    icon-social-foursquare
+    icon-social-github
+    icon-social-google-plus
+    icon-social-hi5
+    icon-social-instagram
+    icon-social-lastfm
+    icon-social-linkedin
+    icon-social-medium
+    icon-social-myspace
+    icon-social-path
+    icon-social-pinterest
+    icon-social-rdio
+    icon-social-reddit
+    icon-social-skype
+    icon-social-spotify
+    icon-social-stack-overflow
+    icon-social-steam
+    icon-social-stumbleupon
+    icon-social-treehouse
+    icon-social-tumblr
+    icon-social-twitter
+    icon-social-vimeo
+    icon-social-xbox
+    icon-social-yelp
+    icon-social-youtube
+    icon-social-zerply
+    icon-mail
+
+-------------------------------->
+
+<!-- add social info here -->
+
+
+
+<nav class="cover-navigation navigation--social">
+  <ul class="navigation">
+
+    
+      <!-- Github -->
+      <li class="navigation__item">
+        <a href="https://github.com/ezirmusitua" title="Huno on GitHub">
+          <i class='icon icon-social-github'></i>
+          <span class="label">GitHub</span>
+        </a>
+      </li>
+    
+
+    <!-- China social icon -->
+    <!--
+    
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-douban'></i>
+          <span class="label">Douban</span>
+        </a>
+      </li>
+
+      <li class="navigation__item">
+        <a href="" title="">
+          <i class='icon cs-icon-weibo'></i>
+          <span class="label">Weibo</span>
+        </a>
+      </li>
+
+    -->
+
+
+
+  </ul>
+</nav>
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="panel-cover--overlay"></div>
+  </div>
+</header>
+
+    <div class="content-wrapper">
+        <div class="content-wrapper__inner entry">
+            
+
+<article class="post-container post-container--single">
+
+  <header class="post-header">
+    
+    <h1 class="post-title">配置 windows 下的命令行工具</h1>
+
+    
+
+    <div class="post-meta">
+      <time datetime="2016-07-24" class="post-meta__date date">2016-07-24</time> 
+
+      <span class="post-meta__tags tags">
+
+          
+
+          
+             &#8226; 标签:
+            <font class="tags">
+              <a class="tags-link" href="/tags/ConEmu/">ConEmu</a>, <a class="tags-link" href="/tags/powershell/">powershell</a>, <a class="tags-link" href="/tags/tools/">tools</a>, <a class="tags-link" href="/tags/windows/">windows</a>
+            </font>
+          
+
+      </span>
+    </div>
+    
+    
+
+  </header>
+
+  <section id="post-content" class="article-content post">
+    <p>终于扛过了蛋疼的两周，据说接下就不会这么赶了，应该不会还这么忙碌吧，因为是据说，所以我整个人还是在一种不稳定的状态中的，就看明天 IPM 怎么说了。<br>最近这两周过的好蛋疼啊，要说是没有规律倒也不是，但是每天的规律就是赶工!嗯，不是进度慢效率低，我是真的尽力了，只是我一个人不能把所有的东西都搞定吧，而且还总有人在你后面哔哔哔，大家相互理解一下就好，真心累。<br>好在周五很顺利 ~ Nice  </p>
+<hr>
+<p>上周的时候是右边的嘴巴溃疡，这周是左边的嘴巴溃疡，而且位置都是那么尴尬，本来压力就大，寝食难安呐亲，据说漱口水会有用，也不知道真的假的，反正买回来试试 ~<br>我想吃好吃的:-(  </p>
+<hr>
+<p>希望下周能让我缓缓 ，，，  </p>
+<hr>
+<h2 id="蛋疼的-windows-命令行环境"><a href="#蛋疼的-windows-命令行环境" class="headerlink" title="蛋疼的 windows 命令行环境"></a>蛋疼的 windows 命令行环境</h2><p>作为一名专一的 Windows 用户，对于 Windows 的命令行环境实在有太多的槽可吐。<br>那么丑，不能自动补全，能用的命令太少，没有什么拓展性。<br>这就是 windows 下的命令行环境 – cmd。<br>为了摆脱这个蛋疼的 cmd，曾经也做过很多尝试:  </p>
+<ol>
+<li><a href="http://www.mingw.org/" target="_blank" rel="external">MinGw</a> &amp; <a href="https://www.cygwin.com/" target="_blank" rel="external">Cygwin</a><br>这两个东西是在 windows 平台上运行的 Unix 模拟环境，通过在 Windows 上配置这两个玩意我们可以在 Windows 下拥有 Unix 的工具。<br>之前只是稍微尝试过 MinGw，用 Cygwin 还是比较多的。这两个东西其实是有点蛋疼的:<br>首先，这两个东西相当于是要在系统中模拟另一个系统，因此他们的 size 必然不会小，随着你安装的东西越来越多，它们占用的地方也会越来越大，记得之前折腾的 Cygwin 占了好几个 G 的空间。<br>其次，如果只是为了追求一个类 Unix 的 Shell 环境，实在是没有必要折腾这些玩意。如果对 Linux<br>环境是刚需，折腾这中东西还是会有很多兼容性的问题，与其面对数之不尽的问题，还不如买个备用机装 Linux 好使，反正 Linux 对配置要求不高，花不了几个钱，何必浪费时间呢。  </li>
+<li><a href="https://babun.github.io" target="_blank" rel="external">babun</a> &amp; <a href="https://github.com/bmatzelle/gow" target="_blank" rel="external">gow</a><br>babun 和 gow 也是人们为了解决在蛋疼的 Windows 命令行环境搞出来的东西，港真，本质上这两个东西和上面的那两个东西区别并不是很大，只是这两个东西并不是要在 Windows 下模拟 Linux 的环境，只是希望在 Windows 下能使用常用的 Linux 工具而已，因此这两个东西中包含了常见的 Linux Shell 工具，并且这些工具在 Windows 下是可以正常使用的，这样子人们就好像是在 Windows 下使用 Linux Shell 一样。<br>之前使用该一段时间的<code>Babun</code>，但是我没用多久就删了，删的原因是因为我觉的这东西还是太繁复，太过冗余，而且体验也没有真的在 Linux 环境下使用好，有的时候还有很多蛋疼的问题。  </li>
+<li>Git Bash 等<br>如果电脑里安装了<a href="https://git-scm.com" target="_blank" rel="external">Git</a>，那么系统中就已经存在了<code>git bash</code>这样的利用 MinGw 实现的 Linux 模拟环境，Git Bash 的本质就是 MinGw，就不多说了，只是 Git Bash 中包含的只有一些常用的 Linux Shell 工具，所以体积没那么大，并且由于你并不会用它来干什么只有在 Linux 上可以做的事情，所以如果安安生生的还是可以用它来愉快的玩耍的。但是，如果你说它好丑啊，抱歉，无能为力 ~  </li>
+</ol>
+<h2 id="Powershell-gt-cmd"><a href="#Powershell-gt-cmd" class="headerlink" title="Powershell -&gt; cmd"></a>Powershell -&gt; cmd</h2><p>首先我们需要解决一下 cmd 功能缺失的问题，传统的 cmd 是 Dos 时代的遗物，但是到现在人们还在使用它，真心是很蛋疼。<br>早在 2006 年 MS 就已经开发了 Powershell，在 XP 上我们就已经可以用到 Powershell 了，我个人听说 Powershell 也是在上大学以后了。<br>关于 Powershell 是什么，可以参考 <a href="https://zh.wikipedia.org/wiki/Windows_PowerShell" target="_blank" rel="external">wikipedia</a>。<br>最开始使用 Powershell 的原因是:  </p>
+<ol>
+<li>能使用 ls / mv 等类 bash 的指令  </li>
+<li>有比 cmd 更丰富的颜色(前提是直接打开 Powershell 而不是用 cmd 打开 Powershell)  </li>
+</ol>
+<p>其实我一开始也不知道 Powershell 很强大，，，只是正好上周还不忙的时候看到了之前收藏的 Page 想学习一下才发现的:-P<br>中文学习资料可以看<a href="http://www.pstips.net/powershell-online-tutorials/" target="_blank" rel="external">这里</a>  </p>
+<h2 id="利用-ConEmu-增强-Windows-下的命令行环境"><a href="#利用-ConEmu-增强-Windows-下的命令行环境" class="headerlink" title="利用 ConEmu 增强 Windows 下的命令行环境"></a>利用 ConEmu 增强 Windows 下的命令行环境</h2><p><a href="https://conemu.github.io/" target="_blank" rel="external">ConEmu</a> 官方的说明是一个支持 Tab 的 Windows 控制台模拟器。不要被这么朴素的解释蒙蔽了，这货真心很强大，有了它你能在 Windows 感受到完全不一样的命令行环境。<br>之前也折腾过像 zsh 这样的 Shell 环境，通过不同的 Themes 和 Plugins，我们可以定制出属于我们的<code>好看</code>，<code>功能强大</code>的 Shell 环境。<br>通过 ConEmu 和 Powershell 我们也可以在 Windows 下实现像 zsh 那样的强大的 Shell 环境。<br>当我们安装好了 ConEmu 后，首先就会有一个默认的配置窗口让我们进行初始化的配置，上面的英文都不难，稍微看看就知道都有什么了，进行初步的配置后就会进入 ConEmu。<br>首先我们打开 Settings 进行必要的配置以便满足我们的需求:  </p>
+<ol>
+<li>Main<br><img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-Setting-Main.png" alt="Main Setting"><br>在这里配置字体，字体大小，字符集等基本的东西，没什么复杂的，按自己喜欢的来就好。    </li>
+<li>背景图片<br><img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-Setting-Main-BackgroundImage.png" alt="Background Image"><br>这个功能我很喜欢呐，允许你为 Console 增加背景图片，结合一定的透明度，看起来还是很赞的 ~  </li>
+<li>Tasks<br><img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-Tasks.png" alt="Tasks"><br>这部分的设定包含了开启 ConEmu 时默认打开的程序，默认的设置成 Powershell 即可，其他的地方没什么好在意的。<br>最好在 Environment 中添加上一句<code>chcp utf8</code>修改默认编码集为 UTF8。  </li>
+<li>Features<br><img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-Color-Schema.png" alt="Features"><br>在这个部分里包含的都是一些显示上的自定义以及针对特殊 APP 的设定，我们只需要在意一下 Color 即可，通过这个选项我们可以修改我们的配色方案(当然你也可以自己配置，但是用别人的就可以啦 ~ )。<br>如果喜欢带透明度的界面到<code>Transparency</code>里设置一下就好。<br><img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-Normal.png" alt="Normal">  </li>
+<li>Keys &amp; Macro<br><img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-Setting-Main.png" alt="Keys"><br>这个部分是非常重要的一个部分，通过在这里配置适合自己的键位，不仅能让我们对操作更加熟练，同时也是一个熟悉功能的过程。<br>对我而言有用的功能主要集中在下面这几项:  <ul>
+<li>快速唤醒 – Alt + `    </li>
+<li>新建窗口 – LAlt + E    </li>
+<li>水平分割窗口 – LCtrl + LAlt + H   </li>
+<li>垂直分割窗口 – LCtrl + LAlt + K   </li>
+<li>向上移动窗口边界 – Win + LCtrl + H  </li>
+<li>向下移动窗口边界 – Win + LCtrl + L     </li>
+<li>向左移动窗口边界 – Win + LCtrl + J   </li>
+<li>向右移动窗口边界 – Win + LCtrl + K   </li>
+<li>选择左边的窗口 – LCtrl + LShift + J   </li>
+<li>选择右边的窗口 – LCtrl + LShift + K  </li>
+<li>选择左边的 Tab – LAlt + J   </li>
+<li>选择右边的 Tab – LAlt + K   </li>
+<li>关闭当前 Tab – LAlt + Q   </li>
+<li>复制当前 Tab – LCtrl + Win + D  </li>
+<li>在当前 Tab 中查找 – LCtrl + Win + F  </li>
+</ul>
+</li>
+</ol>
+<p>掌握了这些操作基本上就已经可以很好的操作 ConEmu 了。<br><img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-split-windows.png" alt="Split Windows">  </p>
+<h2 id="Powershell-插件"><a href="#Powershell-插件" class="headerlink" title="Powershell 插件"></a>Powershell 插件</h2><p>关于 Powershell 的插件，之前丝毫没有留意到，这两天折腾的时候才发现原来 Powershell 发展的还是很不错的，提供了很多非常实用的插件来提高我们的效率。<br>下面主要介绍几种我认为非常有用的 Powershell 插件:  </p>
+<ol>
+<li><a href="http://psget.net/" target="_blank" rel="external">PsGet</a><br>貌似在 Powershell 5.0 中已经内置了。<br>功能就相当于是 Debain 里的 apt-get，只不过用途是用来安装 Powershell 插件。具体的安装方法可以参考官方文档。  </li>
+<li><a href="https://github.com/lzybkr/PSReadLine" target="_blank" rel="external">PSReadLine</a><br>这个在 Powershell 5.0 中应该是已经内置的了。<br>主要就是用来增强 Powershell 功能的。他能干什么在 Git Repo 中描述的很清楚，就不翻译了。  </li>
+<li><a href="https://github.com/dahlbyk/posh-git" target="_blank" rel="external">Posh-Git</a><br>为 Powershell 提供 Git 集成。<br>参考知乎上的这个<a href="https://www.zhihu.com/question/29550357" target="_blank" rel="external">回答</a>。  </li>
+<li><a href="https://github.com/tkellogg/Jump-Location" target="_blank" rel="external">Jump-Location</a><br>如果用过 zsh 那么一定知道 autojump，用 j 就能去任何地方简直爽爆了是吧，今天想看看 Powershell 有没有类似的东西，没想到还真有，试用了一下，感觉可以满足基本的使用，还是非常赞的。  </li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>通过使用 ConEmu 和 Powershell 我们就可以在 Windows 上使用强大的 Shell 环境里，同时利用 ConEmu 我们还可以同时将诸如<code>Git Bash</code>，<code>Babun</code>，<code>Putty</code>等在 ConEmu 中打开，这样子我们就可以打造一个非常 Nice 的命令行环境(我还在尝试的过程中 ~ )。<br><img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-24-Vim.png" alt="Vim">  </p>
+<p>PS. Vim(不是 Gvim)下无法输入中文的问题有人知道怎么搞么，解决不了真是蛋疼啊啊啊啊!   </p>
+
+  </section>
+
+  
+
+<section class="post-comments">
+  <div id="disqus_thread"></div>
+  <script type="text/javascript">
+      var disqus_shortname = 'jferroalsblog'; 
+      /* * * DON'T EDIT BELOW THIS LINE * * */
+      (function() {
+          var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+          dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+          (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+  </script>
+  <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section>
+
+
+  
+</article>
+
+
+            <footer class="footer">
+
+    <span class="footer__copyright">&copy; 2016. | Jferroal's Blog <br/> <br/> Powered by <a href="https://hexo.io/">Hexo</a>强力驱动 | 主题 <a href="https://github.com/someus/huno">Huno</a></span>
+    
+</footer>
+        </div>
+    </div>
+
+    <!-- js files -->
+    <script src="//cdn.bootcss.com/jquery/2.2.2/jquery.min.js"></script>
+    <script src="http://o72dm2udp.bkt.clouddn.com/main.js"></script>
+    <script src="http://o72dm2udp.bkt.clouddn.com/scale.fix.js"></script>
+    
+
+    
+
+    <script src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js"></script>
+    <script type="text/javascript"> 
+        $(document).ready(function(){
+            MathJax.Hub.Config({ 
+                tex2jax: {inlineMath: [['[latex]','[/latex]'], ['\\(','\\)']]} 
+            });
+        });
+    </script>
+
+
+    
+
+    <script src="http://o72dm2udp.bkt.clouddn.com/awesome-toc.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $.awesome_toc({
+                overlay: true,
+                contentId: "post-content",
+            });
+        });
+    </script>
+
+
+    
+    
+    <!--kill ie6 -->
+<!--[if IE 6]>
+  <script src="//letskillie6.googlecode.com/svn/trunk/2/zh_CN.js"></script>
+<![endif]-->
+
+</body>
+</html>
