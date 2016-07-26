@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://blog.jferroal.com/about/index.html</loc>
+    
+    <lastmod>2016-07-26T13:35:38.233Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://blog.jferroal.com/2016/07/26/2016-7-26-Morning/</loc>
+    
+    <lastmod>2016-07-26T12:42:53.491Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://blog.jferroal.com/2016/07/25/2016-7-25-Morning/</loc>
     
     <lastmod>2016-07-25T12:55:59.472Z</lastmod>
@@ -229,13 +243,6 @@
     <loc>http://blog.jferroal.com/2016/05/12/hello-world/</loc>
     
     <lastmod>2016-05-12T14:48:34.433Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://blog.jferroal.com/about/index.html</loc>
-    
-    <lastmod>2016-05-12T13:40:57.291Z</lastmod>
     
   </url>
   
