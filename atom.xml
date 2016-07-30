@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jferroal.com/"/>
-  <updated>2016-07-27T12:49:17.709Z</updated>
+  <updated>2016-07-29T13:41:14.985Z</updated>
   <id>http://blog.jferroal.com/</id>
   
   <author>
@@ -16,13 +16,64 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2016-7-29 Morning</title>
+    <link href="http://blog.jferroal.com/2016/07/29/2016-7-29-Morning/"/>
+    <id>http://blog.jferroal.com/2016/07/29/2016-7-29-Morning/</id>
+    <published>2016-07-29T13:05:46.000Z</published>
+    <updated>2016-07-29T13:41:14.985Z</updated>
+    
+    <content type="html"></content>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+      <category term="daily" scheme="http://blog.jferroal.com/tags/daily/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2016-7-28 Morning</title>
+    <link href="http://blog.jferroal.com/2016/07/28/2016-7-28-Morning/"/>
+    <id>http://blog.jferroal.com/2016/07/28/2016-7-28-Morning/</id>
+    <published>2016-07-28T12:12:13.000Z</published>
+    <updated>2016-07-28T14:05:30.586Z</updated>
+    
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-28-Morning.jpg&quot; alt=&quot;Breakfast&quot;&gt;&lt;br&gt;早上起来了，然后低头，又睡了，真特么的尴尬，，，&lt;br&gt;最后和昨天一样，快八点起来出去跑的步，不过感觉这样的节奏也还不错(每天早上起来总能看到爱锻炼的妹子以及可爱的狗狗 ~)  &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;昨天中午做了顿超好吃的饭(For me):&lt;br&gt;卤牛肉 + 咸火腿肉 + 豆干 + 蘑菇炒出来当馅，用这边的饼(好像是粗粮的吧)抹上牛油果(辣椒，蒜)拌出来的一种酱料卷起来吃，简直无敌美味!!!&lt;br&gt;果然，单身狗要喂自己狗粮 ~  &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;昨天学到一点:&lt;br&gt;Lodash 的某些方法处理的对象一定要是 JSON 格式的，不然可能会用不了，比如:  &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;User.findById(userId).exec().then(function(user) {
+    return {
+        user: _.omit(user.toJSON(), &amp;apos;username&amp;apos;)
+    }
+})
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;上面代码的含义就是忽略从 mongo 得到的 user 的 username 属性，但是从 mongo 拿回来的是对象实际上是 document 对象，因此必须使用 toJSON 转化为 json 格式，否则无法利用 omit。  &lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;一顿健康的早餐是美好一天的开始，今天加油 ~  &lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-28-Morning.jpg&quot; alt=&quot;Breakfast&quot;&gt;&lt;br&gt;早上起来了，然后低头，又睡了，真特么的尴尬，，，&lt;br&gt;最后和昨天一
+    
+    </summary>
+    
+    
+      <category term="daily" scheme="http://blog.jferroal.com/tags/daily/"/>
+    
+  </entry>
+  
+  <entry>
     <title>2016-7-27 Morning</title>
     <link href="http://blog.jferroal.com/2016/07/27/2016-7-27-Morning/"/>
     <id>http://blog.jferroal.com/2016/07/27/2016-7-27-Morning/</id>
     <published>2016-07-27T12:26:49.000Z</published>
-    <updated>2016-07-27T12:49:17.709Z</updated>
+    <updated>2016-07-28T02:33:54.970Z</updated>
     
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-27-Morning.png&quot; alt=&quot;ReBorn&quot;&gt;&lt;br&gt;刚起来的时候一看这个太阳就知道不对，再不起来特么的小弟的命就没了，穿上衣服我就跑步去了，回来顺便把俯卧撑做了，所以说 不用当众杀亲了喵 ~ :-P  &lt;/p&gt;
+    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-727-Morning.png&quot; alt=&quot;ReBorn&quot;&gt;&lt;br&gt;刚起来的时候一看这个太阳就知道不对，再不起来特么的小弟的命就没了，穿上衣服我就跑步去了，回来顺便把俯卧撑做了，所以说 不用当众杀亲了喵 ~ :-P  &lt;/p&gt;
 &lt;hr&gt;
 &lt;p&gt;通常，放弃一个好的习惯很容易，放弃一个不好的习惯很难。&lt;br&gt;我觉得吧，会这样子的原因主要是好习惯和坏习惯带来的长短期影响是不同的，好习惯短差长好，坏习惯是短好长差，而我们呢，通常都是近视眼，所以坏习惯和好习惯的交锋始终是占据优势的 ~  &lt;/p&gt;
 &lt;hr&gt;
@@ -33,7 +84,7 @@
     
     <summary type="html">
     
-      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-7-27-Morning.png&quot; alt=&quot;ReBorn&quot;&gt;&lt;br&gt;刚起来的时候一看这个太阳就知道不对，再不起来特么的小弟的命就没了，穿上衣服
+      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-727-Morning.png&quot; alt=&quot;ReBorn&quot;&gt;&lt;br&gt;刚起来的时候一看这个太阳就知道不对，再不起来特么的小弟的命就没了，穿上衣服我
     
     </summary>
     
@@ -268,48 +319,6 @@
       <category term="daily" scheme="http://blog.jferroal.com/tags/daily/"/>
     
       <category term="travel" scheme="http://blog.jferroal.com/tags/travel/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2016-7-16 Morning</title>
-    <link href="http://blog.jferroal.com/2016/07/16/2016-7-16-Morning/"/>
-    <id>http://blog.jferroal.com/2016/07/16/2016-7-16-Morning/</id>
-    <published>2016-07-16T12:24:23.000Z</published>
-    <updated>2016-07-16T12:47:28.240Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-716-Morning.jpg&quot; alt=&quot;Work in saturday&quot;&gt;&lt;br&gt;今天是周六，但是我还要加班，哭:-(&lt;br&gt;毕业总结估计是没时间写了，等下周应该就好了。&lt;br&gt;突然发现手机卡在这边用不了，报到证在寄的时候出问题了怎么搞呢，失策啊，感觉只能等上一段时间让我哥去看一下了，不行再想办法吧。&lt;br&gt;昨天突然就觉得呀，心累是比身累痛苦一万倍的事情，所以说一个人是最自在的，因为不用和别人扯淡，哪会有那么多烦心事 ~&lt;br&gt;最近都没时间学习新东西了，工作忙啊啊啊啊 ~&lt;br&gt;刚才和蒋吉吉确认了一下报到证的事情，应该没什么问题(果然只是一个人的话很多事不好折腾啊，我真是傻吊:-P)&lt;br&gt;今天不用跑步什么的，折腾一下乱七八糟的事情，准备上班去啦!&lt;br&gt;加油 ~  &lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-716-Morning.jpg&quot; alt=&quot;Work in saturday&quot;&gt;&lt;br&gt;今天是周六，但是我还要加班，哭:-(&lt;br&gt;毕业总结估计
-    
-    </summary>
-    
-    
-      <category term="daily" scheme="http://blog.jferroal.com/tags/daily/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2016-7-15 Morning</title>
-    <link href="http://blog.jferroal.com/2016/07/15/2016-7-15-Morning/"/>
-    <id>http://blog.jferroal.com/2016/07/15/2016-7-15-Morning/</id>
-    <published>2016-07-15T12:30:22.000Z</published>
-    <updated>2016-07-15T12:50:13.546Z</updated>
-    
-    <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-715-Morning.jpg&quot; alt=&quot;Night Like Painting&quot;&gt;&lt;br&gt;果然 flag 不能随便立，果然昨天的事情还是很多的，，，&lt;br&gt;好歹昨天算是正常下班了，因为太子走的早 ~&lt;br&gt;八点多离开公司，接着去把这两天欠的步跑完，早上起来把日语也抄完了，然后正常跑步，明天开始可以无拖无欠啦，感觉灰常棒 !&lt;br&gt;昨天手贱买了 90% 的黑巧克力，原来真的是苦的，是苦的:-(，我特么的果然还是太年轻了，不过含着吃感觉还是很香的 ~&lt;br&gt;今天应该就是要修 bug 以及写支付相关的东西了，也不知道月主任 bug 修的怎么样了，，，刚才看了一眼，感觉还有不少，蛋疼&lt;br&gt;爸妈的药店折腾的好像差不多了，感觉我要是干不下去了就回去经营药店去，想想都兴奋 ~ ~&lt;br&gt;今天得帮爸妈把药店管理软件下载好，突然发现手机不能用好像会很蛋疼，我决定重新折腾一下我的国内手机号。&lt;br&gt;加油 !  &lt;/p&gt;
-</content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-715-Morning.jpg&quot; alt=&quot;Night Like Painting&quot;&gt;&lt;br&gt;果然 flag 不能随便立，果然昨天的事情还是很多
-    
-    </summary>
-    
-    
-      <category term="daily" scheme="http://blog.jferroal.com/tags/daily/"/>
     
   </entry>
   
