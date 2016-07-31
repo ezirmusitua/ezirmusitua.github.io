@@ -30,13 +30,13 @@ IdeaVim虽然有配置好的 Vim，但是工作上还是离不开 IDE，，，�
 IdeaVim虽然有配置好的 Vim，但是工作上还是离不开 IDE，，，在 IntelliJ 上装了 Vim Emulator，挪了一些 vim 的配置过来，尽量保持操作一致吧。配置 ideaVim 的步骤(Windows):  
 
 在 User\Username 目录下新建.ideavimrc文件">
-<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-1.png">
-<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-2.png">
-<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-3.png">
-<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-Debug.png">
-<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-TODO.png">
-<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-Angular.png">
-<meta property="og:updated_time" content="2016-07-31T14:13:02.987Z">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-1.png">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-2.png">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-3.png">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-Debug.png">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-TODO.png">
+<meta property="og:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-Angular.png">
+<meta property="og:updated_time" content="2016-07-31T14:21:36.804Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="IntelliJ 相关配置 | Jferroal's Blog">
 <meta name="twitter:description" content="工作告一段落，一到周末就懒得要死，动也不想动，学习是没戏了，只能折腾一下工具玩了，，，  
@@ -44,7 +44,7 @@ IdeaVim虽然有配置好的 Vim，但是工作上还是离不开 IDE，，，�
 IdeaVim虽然有配置好的 Vim，但是工作上还是离不开 IDE，，，在 IntelliJ 上装了 Vim Emulator，挪了一些 vim 的配置过来，尽量保持操作一致吧。配置 ideaVim 的步骤(Windows):  
 
 在 User\Username 目录下新建.ideavimrc文件">
-<meta name="twitter:image" content="http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-1.png">
+<meta name="twitter:image" content="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-1.png">
     
     
     
@@ -242,28 +242,66 @@ classes that you can use:
 <hr>
 <h2 id="IdeaVim"><a href="#IdeaVim" class="headerlink" title="IdeaVim"></a>IdeaVim</h2><p>虽然有配置好的 Vim，但是工作上还是离不开 IDE，，，<br>在 IntelliJ 上装了 Vim Emulator，挪了一些 vim 的配置过来，尽量保持操作一致吧。<br>配置 ideaVim 的步骤(Windows):  </p>
 <ol>
-<li>在 User\Username 目录下新建<code>.ideavimrc</code>文件  </li>
-<li>编辑<code>.ideavimrc</code>文件，增加配置<br>```<br>let mapleader = “,”<br>let g:mapleader = “,”</li>
+<li>在 User\Username 目录下新建<code>.ideavimrc</code>文件    </li>
+<li>编辑<code>.ideavimrc</code>文件，增加配置  </li>
 </ol>
-<p>“ 快速保存<br>nmap <leader>w :w!<cr>  </cr></leader></p>
-<p>“ 快速退出<br>nmap <leader>q :q!<cr>  </cr></leader></p>
-<p>“ 修改 space 为搜索键<br>map <space> /<br>map <c-space> ?  </c-space></space></p>
-<p>“ 修改 0 为 ^<br>map 0 ^<br>```<br>参考的配置在<a href="https://github.com/amix/vimrc" target="_blank" rel="external">这里</a>，能配置的东西不多，而且也无法使用 vim 插件，只是为了尽量的做到和 vim 上的操作一致而已。  </p>
+<pre><code>let mapleader = &quot;,&quot;  
+let g:mapleader = &quot;,&quot;  
+
+&quot; 快速保存    
+nmap &lt;leader&gt;w :w!&lt;cr&gt;    
+
+&quot; 快速退出    
+nmap &lt;leader&gt;q :q!&lt;cr&gt;    
+
+&quot; 修改 space 为搜索键    
+map &lt;space&gt; /  
+map &lt;c-space&gt; ?  
+
+&quot; 修改 0 为 ^  
+map 0 ^
+</code></pre><p>参考的配置在<a href="https://github.com/amix/vimrc" target="_blank" rel="external">这里</a>，能配置的东西不多，而且也无法使用 vim 插件，只是为了尽量的做到和 vim 上的操作一致而已。  </p>
 <h3 id="IntelliJ-快捷键"><a href="#IntelliJ-快捷键" class="headerlink" title="IntelliJ 快捷键"></a>IntelliJ 快捷键</h3><p>记录一些 IntelliJ 的快捷键，顺便熟悉一下功能吧 ~  </p>
 <blockquote>
-<p>Find Usage: Alt + F7<br>Quick Definition: Ctrl + Shift + I<br>Jump To Source: Ctrl + Enter<br>Jump To Navigation Bar: Alt + Home<br>// Comment: Ctrl + /<br>/**/ Comment: Ctrl + Shift + /<br>Refactor This: Ctrl + Shift + Alt + I<br>Rename: Shift + F6<br>Change Signature:  Ctrl + F6<br>Type Migration: Ctrl + Shift + F6<br>Safe Delete: Alt + F6<br>Variable: Ctrl + Alt + V<br>Constant: Ctrl + Alt + C<br>Method: Ctrl + Alt + M<br>Inline: Ctrl + Alt + N<br>Open Vim Emulator: Shift + Alt + V<br>Check In Project: Ctrl + K<br>Update Project: Ctrl + T<br>Git Push: Shift + Ctrl + K<br>Split Vertically: Ctrl + Alt + H – 和我的 ConEmu 快捷键保持一致<br>Split Horizontally: Ctrl + Alt + J – 和我的 ConEmu 快捷键保持一致<br>Go To Next Splitter: Alt + K  – 和我的 ConEmu 快捷键保持一致<br>Sort Tab By Name: Shift + Ctrl + Alt + F5<br>Show Git Annotation: Shift + Ctrl + Alt + F6<br>Revert File:  Ctrl + Alt + Z    </p>
+<ul>
+<li>Find Usage: Alt + F7   </li>
+<li>Quick Definition: Ctrl + Shift + I    </li>
+<li>Jump To Source: Ctrl + Enter     </li>
+<li>Jump To Navigation Bar: Alt + Home     </li>
+<li>// Comment: Ctrl + /    </li>
+<li>/**/ Comment: Ctrl + Shift + /    </li>
+<li>Refactor This: Ctrl + Shift + Alt + I    </li>
+<li>Rename: Shift + F6    </li>
+<li>Change Signature:  Ctrl + F6  </li>
+<li>Type Migration: Ctrl + Shift + F6    </li>
+<li>Safe Delete: Alt + F6    </li>
+<li>Variable: Ctrl + Alt + V  </li>
+<li>Constant: Ctrl + Alt + C    </li>
+<li>Method: Ctrl + Alt + M      </li>
+<li>Inline: Ctrl + Alt + N    </li>
+<li>Open Vim Emulator: Shift + Alt + V    </li>
+<li>Check In Project: Ctrl + K    </li>
+<li>Update Project: Ctrl + T      </li>
+<li>Git Push: Shift + Ctrl + K      </li>
+<li>Split Vertically: Ctrl + Alt + H – 和我的 ConEmu 快捷键保持一致  </li>
+<li>Split Horizontally: Ctrl + Alt + J – 和我的 ConEmu 快捷键保持一致   </li>
+<li>Go To Next Splitter: Alt + K  – 和我的 ConEmu 快捷键保持一致     </li>
+<li>Sort Tab By Name: Shift + Ctrl + Alt + F5      </li>
+<li>Show Git Annotation: Shift + Ctrl + Alt + F6        </li>
+<li>Revert File:  Ctrl + Alt + Z      </li>
+</ul>
 </blockquote>
 <h3 id="Live-Template-配置"><a href="#Live-Template-配置" class="headerlink" title="Live Template 配置"></a>Live Template 配置</h3><p>配置一些 Live Template 可以减少打字次数，延长键盘寿命 ~<br>在 IntelliJ 中增加 Live Template 的方法是:  </p>
 <ol>
-<li>将你想要设为 Live Template 的代码片段在 IntelliJ 中写下来并选中代码片段<br><img src="http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-1.png" alt="step 1"></li>
-<li>选择菜单栏中的 Tools，在下拉菜单中选择<code>Save as Live Template</code><br><img src="http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-2.png" alt="step 2"></li>
-<li>在弹出的框中编辑($…$ 中保存的值是 Live Template 中我们可以编辑的值，$END$ 只是变量填写完毕后光标的位置，存在 $Var$ 之后就可以通过<code>Edit variable</code>对变量的默认值等进行编辑)<br><img src="http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-3.png" alt="step 3"></li>
+<li>将你想要设为 Live Template 的代码片段在 IntelliJ 中写下来并选中代码片段<br><img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-1.png" alt="step 1">  </li>
+<li>选择菜单栏中的 Tools，在下拉菜单中选择<code>Save as Live Template</code><br><img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-2.png" alt="step 2">  </li>
+<li>在弹出的框中编辑($…$ 中保存的值是 Live Template 中我们可以编辑的值，$END$ 只是变量填写完毕后光标的位置，存在 $Var$ 之后就可以通过<code>Edit variable</code>对变量的默认值等进行编辑)<br><img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-3.png" alt="step 3">  </li>
 </ol>
 <p>简单的例子:  </p>
 <ol>
-<li>插入 console.log 语句:<br> <img src="http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-Debug.png" alt="Debug"></li>
-<li>插入 TODO 语句:<br> <img src="http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-TODO.png" alt="TODO"></li>
-<li>Angular Service:<br> <img src="http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-Angular.png" alt="Angular Service"></li>
+<li>插入 console.log 语句:<br> <img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-Debug.png" alt="Debug"></li>
+<li>插入 TODO 语句:<br> <img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-TODO.png" alt="TODO"></li>
+<li>Angular Service:<br> <img src="http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-Angular.png" alt="Angular Service"></li>
 </ol>
 <p>下载相应插件还会默认有一些配置好的 Live Template，比如 Angular 等。  </p>
 

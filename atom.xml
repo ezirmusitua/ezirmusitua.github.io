@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://blog.jferroal.com/"/>
-  <updated>2016-07-31T14:13:02.987Z</updated>
+  <updated>2016-07-31T14:21:36.804Z</updated>
   <id>http://blog.jferroal.com/</id>
   
   <author>
@@ -20,34 +20,72 @@
     <link href="http://blog.jferroal.com/2016/07/30/IntelliJ-%E7%9B%B8%E5%85%B3%E9%85%8D%E7%BD%AE/"/>
     <id>http://blog.jferroal.com/2016/07/30/IntelliJ-相关配置/</id>
     <published>2016-07-31T01:41:06.000Z</published>
-    <updated>2016-07-31T14:13:02.987Z</updated>
+    <updated>2016-07-31T14:21:36.804Z</updated>
     
     <content type="html">&lt;p&gt;工作告一段落，一到周末就懒得要死，动也不想动，学习是没戏了，只能折腾一下工具玩了，，，  &lt;/p&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;IdeaVim&quot;&gt;&lt;a href=&quot;#IdeaVim&quot; class=&quot;headerlink&quot; title=&quot;IdeaVim&quot;&gt;&lt;/a&gt;IdeaVim&lt;/h2&gt;&lt;p&gt;虽然有配置好的 Vim，但是工作上还是离不开 IDE，，，&lt;br&gt;在 IntelliJ 上装了 Vim Emulator，挪了一些 vim 的配置过来，尽量保持操作一致吧。&lt;br&gt;配置 ideaVim 的步骤(Windows):  &lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;在 User\Username 目录下新建&lt;code&gt;.ideavimrc&lt;/code&gt;文件  &lt;/li&gt;
-&lt;li&gt;编辑&lt;code&gt;.ideavimrc&lt;/code&gt;文件，增加配置&lt;br&gt;```&lt;br&gt;let mapleader = “,”&lt;br&gt;let g:mapleader = “,”&lt;/li&gt;
+&lt;li&gt;在 User\Username 目录下新建&lt;code&gt;.ideavimrc&lt;/code&gt;文件    &lt;/li&gt;
+&lt;li&gt;编辑&lt;code&gt;.ideavimrc&lt;/code&gt;文件，增加配置  &lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;“ 快速保存&lt;br&gt;nmap &lt;leader&gt;w :w!&lt;cr&gt;  &lt;/cr&gt;&lt;/leader&gt;&lt;/p&gt;
-&lt;p&gt;“ 快速退出&lt;br&gt;nmap &lt;leader&gt;q :q!&lt;cr&gt;  &lt;/cr&gt;&lt;/leader&gt;&lt;/p&gt;
-&lt;p&gt;“ 修改 space 为搜索键&lt;br&gt;map &lt;space&gt; /&lt;br&gt;map &lt;c-space&gt; ?  &lt;/c-space&gt;&lt;/space&gt;&lt;/p&gt;
-&lt;p&gt;“ 修改 0 为 ^&lt;br&gt;map 0 ^&lt;br&gt;```&lt;br&gt;参考的配置在&lt;a href=&quot;https://github.com/amix/vimrc&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;，能配置的东西不多，而且也无法使用 vim 插件，只是为了尽量的做到和 vim 上的操作一致而已。  &lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;let mapleader = &amp;quot;,&amp;quot;  
+let g:mapleader = &amp;quot;,&amp;quot;  
+
+&amp;quot; 快速保存    
+nmap &amp;lt;leader&amp;gt;w :w!&amp;lt;cr&amp;gt;    
+
+&amp;quot; 快速退出    
+nmap &amp;lt;leader&amp;gt;q :q!&amp;lt;cr&amp;gt;    
+
+&amp;quot; 修改 space 为搜索键    
+map &amp;lt;space&amp;gt; /  
+map &amp;lt;c-space&amp;gt; ?  
+
+&amp;quot; 修改 0 为 ^  
+map 0 ^
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;参考的配置在&lt;a href=&quot;https://github.com/amix/vimrc&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;，能配置的东西不多，而且也无法使用 vim 插件，只是为了尽量的做到和 vim 上的操作一致而已。  &lt;/p&gt;
 &lt;h3 id=&quot;IntelliJ-快捷键&quot;&gt;&lt;a href=&quot;#IntelliJ-快捷键&quot; class=&quot;headerlink&quot; title=&quot;IntelliJ 快捷键&quot;&gt;&lt;/a&gt;IntelliJ 快捷键&lt;/h3&gt;&lt;p&gt;记录一些 IntelliJ 的快捷键，顺便熟悉一下功能吧 ~  &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Find Usage: Alt + F7&lt;br&gt;Quick Definition: Ctrl + Shift + I&lt;br&gt;Jump To Source: Ctrl + Enter&lt;br&gt;Jump To Navigation Bar: Alt + Home&lt;br&gt;// Comment: Ctrl + /&lt;br&gt;/**/ Comment: Ctrl + Shift + /&lt;br&gt;Refactor This: Ctrl + Shift + Alt + I&lt;br&gt;Rename: Shift + F6&lt;br&gt;Change Signature:  Ctrl + F6&lt;br&gt;Type Migration: Ctrl + Shift + F6&lt;br&gt;Safe Delete: Alt + F6&lt;br&gt;Variable: Ctrl + Alt + V&lt;br&gt;Constant: Ctrl + Alt + C&lt;br&gt;Method: Ctrl + Alt + M&lt;br&gt;Inline: Ctrl + Alt + N&lt;br&gt;Open Vim Emulator: Shift + Alt + V&lt;br&gt;Check In Project: Ctrl + K&lt;br&gt;Update Project: Ctrl + T&lt;br&gt;Git Push: Shift + Ctrl + K&lt;br&gt;Split Vertically: Ctrl + Alt + H – 和我的 ConEmu 快捷键保持一致&lt;br&gt;Split Horizontally: Ctrl + Alt + J – 和我的 ConEmu 快捷键保持一致&lt;br&gt;Go To Next Splitter: Alt + K  – 和我的 ConEmu 快捷键保持一致&lt;br&gt;Sort Tab By Name: Shift + Ctrl + Alt + F5&lt;br&gt;Show Git Annotation: Shift + Ctrl + Alt + F6&lt;br&gt;Revert File:  Ctrl + Alt + Z    &lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Find Usage: Alt + F7   &lt;/li&gt;
+&lt;li&gt;Quick Definition: Ctrl + Shift + I    &lt;/li&gt;
+&lt;li&gt;Jump To Source: Ctrl + Enter     &lt;/li&gt;
+&lt;li&gt;Jump To Navigation Bar: Alt + Home     &lt;/li&gt;
+&lt;li&gt;// Comment: Ctrl + /    &lt;/li&gt;
+&lt;li&gt;/**/ Comment: Ctrl + Shift + /    &lt;/li&gt;
+&lt;li&gt;Refactor This: Ctrl + Shift + Alt + I    &lt;/li&gt;
+&lt;li&gt;Rename: Shift + F6    &lt;/li&gt;
+&lt;li&gt;Change Signature:  Ctrl + F6  &lt;/li&gt;
+&lt;li&gt;Type Migration: Ctrl + Shift + F6    &lt;/li&gt;
+&lt;li&gt;Safe Delete: Alt + F6    &lt;/li&gt;
+&lt;li&gt;Variable: Ctrl + Alt + V  &lt;/li&gt;
+&lt;li&gt;Constant: Ctrl + Alt + C    &lt;/li&gt;
+&lt;li&gt;Method: Ctrl + Alt + M      &lt;/li&gt;
+&lt;li&gt;Inline: Ctrl + Alt + N    &lt;/li&gt;
+&lt;li&gt;Open Vim Emulator: Shift + Alt + V    &lt;/li&gt;
+&lt;li&gt;Check In Project: Ctrl + K    &lt;/li&gt;
+&lt;li&gt;Update Project: Ctrl + T      &lt;/li&gt;
+&lt;li&gt;Git Push: Shift + Ctrl + K      &lt;/li&gt;
+&lt;li&gt;Split Vertically: Ctrl + Alt + H – 和我的 ConEmu 快捷键保持一致  &lt;/li&gt;
+&lt;li&gt;Split Horizontally: Ctrl + Alt + J – 和我的 ConEmu 快捷键保持一致   &lt;/li&gt;
+&lt;li&gt;Go To Next Splitter: Alt + K  – 和我的 ConEmu 快捷键保持一致     &lt;/li&gt;
+&lt;li&gt;Sort Tab By Name: Shift + Ctrl + Alt + F5      &lt;/li&gt;
+&lt;li&gt;Show Git Annotation: Shift + Ctrl + Alt + F6        &lt;/li&gt;
+&lt;li&gt;Revert File:  Ctrl + Alt + Z      &lt;/li&gt;
+&lt;/ul&gt;
 &lt;/blockquote&gt;
 &lt;h3 id=&quot;Live-Template-配置&quot;&gt;&lt;a href=&quot;#Live-Template-配置&quot; class=&quot;headerlink&quot; title=&quot;Live Template 配置&quot;&gt;&lt;/a&gt;Live Template 配置&lt;/h3&gt;&lt;p&gt;配置一些 Live Template 可以减少打字次数，延长键盘寿命 ~&lt;br&gt;在 IntelliJ 中增加 Live Template 的方法是:  &lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;将你想要设为 Live Template 的代码片段在 IntelliJ 中写下来并选中代码片段&lt;br&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-1.png&quot; alt=&quot;step 1&quot;&gt;&lt;/li&gt;
-&lt;li&gt;选择菜单栏中的 Tools，在下拉菜单中选择&lt;code&gt;Save as Live Template&lt;/code&gt;&lt;br&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-2.png&quot; alt=&quot;step 2&quot;&gt;&lt;/li&gt;
-&lt;li&gt;在弹出的框中编辑($…$ 中保存的值是 Live Template 中我们可以编辑的值，$END$ 只是变量填写完毕后光标的位置，存在 $Var$ 之后就可以通过&lt;code&gt;Edit variable&lt;/code&gt;对变量的默认值等进行编辑)&lt;br&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-3.png&quot; alt=&quot;step 3&quot;&gt;&lt;/li&gt;
+&lt;li&gt;将你想要设为 Live Template 的代码片段在 IntelliJ 中写下来并选中代码片段&lt;br&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-1.png&quot; alt=&quot;step 1&quot;&gt;  &lt;/li&gt;
+&lt;li&gt;选择菜单栏中的 Tools，在下拉菜单中选择&lt;code&gt;Save as Live Template&lt;/code&gt;&lt;br&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-2.png&quot; alt=&quot;step 2&quot;&gt;  &lt;/li&gt;
+&lt;li&gt;在弹出的框中编辑($…$ 中保存的值是 Live Template 中我们可以编辑的值，$END$ 只是变量填写完毕后光标的位置，存在 $Var$ 之后就可以通过&lt;code&gt;Edit variable&lt;/code&gt;对变量的默认值等进行编辑)&lt;br&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-3.png&quot; alt=&quot;step 3&quot;&gt;  &lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;简单的例子:  &lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;插入 console.log 语句:&lt;br&gt; &lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-Debug.png&quot; alt=&quot;Debug&quot;&gt;&lt;/li&gt;
-&lt;li&gt;插入 TODO 语句:&lt;br&gt; &lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-TODO.png&quot; alt=&quot;TODO&quot;&gt;&lt;/li&gt;
-&lt;li&gt;Angular Service:&lt;br&gt; &lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/2016-731-IntelliJ-LiveTemplate-Angular.png&quot; alt=&quot;Angular Service&quot;&gt;&lt;/li&gt;
+&lt;li&gt;插入 console.log 语句:&lt;br&gt; &lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-Debug.png&quot; alt=&quot;Debug&quot;&gt;&lt;/li&gt;
+&lt;li&gt;插入 TODO 语句:&lt;br&gt; &lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-TODO.png&quot; alt=&quot;TODO&quot;&gt;&lt;/li&gt;
+&lt;li&gt;Angular Service:&lt;br&gt; &lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-731-IntelliJ-LiveTemplate-Angular.png&quot; alt=&quot;Angular Service&quot;&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;下载相应插件还会默认有一些配置好的 Live Template，比如 Angular 等。  &lt;/p&gt;
 </content>
@@ -66,11 +104,11 @@
   </entry>
   
   <entry>
-    <title>2016-7-29 Eventing</title>
-    <link href="http://blog.jferroal.com/2016/07/29/2016-7-29-Morning/"/>
-    <id>http://blog.jferroal.com/2016/07/29/2016-7-29-Morning/</id>
+    <title>2016-7-29 Evening</title>
+    <link href="http://blog.jferroal.com/2016/07/29/2016-7-29-Evening/"/>
+    <id>http://blog.jferroal.com/2016/07/29/2016-7-29-Evening/</id>
     <published>2016-07-30T01:05:46.000Z</published>
-    <updated>2016-07-30T16:13:48.969Z</updated>
+    <updated>2016-07-31T14:15:08.321Z</updated>
     
     <content type="html">&lt;p&gt;&lt;img src=&quot;http://o72dm2udp.bkt.clouddn.com/blog/posts/image/2016-729-Evening.jpg&quot; alt=&quot;Evening Running&quot;&gt;&lt;br&gt;这周任务成功完成，产品上线，终于松了一口气，，，  &lt;/p&gt;
 &lt;hr&gt;
